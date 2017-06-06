@@ -1,6 +1,7 @@
 ﻿namespace BusSeatsReservation.Data.Common
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Linq;
     using System.Linq.Expressions;
@@ -29,7 +30,7 @@
             this.SqlDbSet.Remove(entity);
         }
 
-        public IQueryable<T> GetAll()
+        public IEnumerable<T> GetAll()
         {
             return this.SqlDbSet;
         }
@@ -39,7 +40,7 @@
             return this.SqlDbSet.Find(id);
         }
 
-        public IQueryable<T> Search(Expression<Func<T, bool>> predicate)
+        public IEnumerable<T> Search(Expression<Func<T, bool>> predicate)
         {
             return this.SqlDbSet.Where(predicate);
         }
