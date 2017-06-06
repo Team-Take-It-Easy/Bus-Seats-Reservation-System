@@ -60,6 +60,10 @@
     <Compile Include="EfUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusSeatsReservation.Data.PostgreSQL\BusSeatsReservation.Data.PostgreSQL.csproj">
+      <Project>{869e5624-bbaf-435d-9834-524ee4397ed3}</Project>
+      <Name>BusSeatsReservation.Data.PostgreSQL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BusSeatsReservation.Data\BusSeatsReservation.Data.csproj">
       <Project>{9267312A-73A1-4817-A6C8-A9145EB66FEB}</Project>
       <Name>BusSeatsReservation.Data</Name>

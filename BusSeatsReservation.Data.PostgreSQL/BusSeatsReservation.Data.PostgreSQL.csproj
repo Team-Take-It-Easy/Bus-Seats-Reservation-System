@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AF1D485E-7617-47BD-B81F-B0AC7DC1DE8D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{869E5624-BBAF-435D-9834-524EE4397ED3}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BusSeatsReservation.Client</RootNamespace>
-    <AssemblyName>BusSeatsReservation.Client</AssemblyName>
+    <RootNamespace>BusSeatsReservation.Data.PostgreSQL</RootNamespace>
+    <AssemblyName>BusSeatsReservation.Data.PostgreSQL</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -64,7 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="PostgreSQLDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -72,18 +69,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusSeatsReservation.Data.Common\BusSeatsReservation.Data.Common.csproj">
-      <Project>{76ba3948-b661-43a1-bfe4-9c1c700a1c58}</Project>
-      <Name>BusSeatsReservation.Data.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BusSeatsReservation.Data.PostgreSQL\BusSeatsReservation.Data.PostgreSQL.csproj">
-      <Project>{869e5624-bbaf-435d-9834-524ee4397ed3}</Project>
-      <Name>BusSeatsReservation.Data.PostgreSQL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BusSeatsReservation.Data\BusSeatsReservation.Data.csproj">
-      <Project>{9267312a-73a1-4817-a6c8-a9145eb66feb}</Project>
-      <Name>BusSeatsReservation.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BusSeatsReservation.Models\BusSeatsReservation.Models.csproj">
       <Project>{28061cf9-df66-4c09-b320-620ab85d272c}</Project>
       <Name>BusSeatsReservation.Models</Name>

@@ -8,6 +8,8 @@ using BusSeatsReservation.Data;
 using BusSeatsReservation.Data.Common;
 using BusSeatsReservation.Models.SQL.Models;
 using BusSeatsReservation.Data.Common.DataProviders;
+using BusSeatsReservation.Models.PostgreSQL.Models;
+using BusSeatsReservation.Data.PostgreSQL;
 
 namespace BusSeatsReservation.Client
 {
@@ -21,7 +23,6 @@ namespace BusSeatsReservation.Client
 
             var reservation = new Reservation(10, DateTime.Now);
 
-            /*
             user.Reservations.Add(reservation);
 
             sqlDbContext.Users.Add(user);
@@ -29,7 +30,6 @@ namespace BusSeatsReservation.Client
 
 
             sqlDbContext.SaveChanges();
-            */
 
             // with Repository
 
@@ -59,6 +59,25 @@ namespace BusSeatsReservation.Client
 
             Console.WriteLine(sqlDataProvider.UsersRepository.GetByID(2).FirstName);
             Console.WriteLine(sqlDataProvider.ReservationsRepository.GetByID(2).Price);
+
+            // PostgreSQL Data provider
+
+            var postgreSQLDbContext = new PostgreSQLDbContext();
+            var busesRepository = new SQLRepository<Bus>(postgreSQLDbContext);
+
+            var postgreSQLUnitOfWork = new EfUnitOfWork(postgreSQLDbContext);
+
+            var postgreSQLDataProvider = new PostgreSQLDataProvider(postgreSQLUnitOfWork, busesRepository);
+
+            var bus = new Bus("CA 1234 BP", 1);
+
+            postgreSQLDataProvider.BusesRepository.Add(bus);
+
+            postgreSQLDataProvider.UnitOfWork.Commit();
+
+            Console.WriteLine("-------------------using PostgreSQLProvider---------------------");
+
+            Console.WriteLine(postgreSQLDataProvider.BusesRepository.GetByID(1).RegistrationNumber);
         }
     }
 }

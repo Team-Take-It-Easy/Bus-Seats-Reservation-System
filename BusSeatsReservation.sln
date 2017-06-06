@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSeatsReservation.Models"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSeatsReservation.Client", "BusSeatsReservation.Client\BusSeatsReservation.Client.csproj", "{AF1D485E-7617-47BD-B81F-B0AC7DC1DE8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSeatsReservation.Data.PostgreSQL", "BusSeatsReservation.Data.PostgreSQL\BusSeatsReservation.Data.PostgreSQL.csproj", "{869E5624-BBAF-435D-9834-524EE4397ED3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{AF1D485E-7617-47BD-B81F-B0AC7DC1DE8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF1D485E-7617-47BD-B81F-B0AC7DC1DE8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF1D485E-7617-47BD-B81F-B0AC7DC1DE8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{869E5624-BBAF-435D-9834-524EE4397ED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{869E5624-BBAF-435D-9834-524EE4397ED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{869E5624-BBAF-435D-9834-524EE4397ED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{869E5624-BBAF-435D-9834-524EE4397ED3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

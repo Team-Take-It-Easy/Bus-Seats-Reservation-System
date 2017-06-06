@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusSeatsReservation.Data.Common.DataProviders
 {
-    public class SQLiteDataProvider
+    public class SQLiteDataProvider: IDataProvider
     {
     }
 }
