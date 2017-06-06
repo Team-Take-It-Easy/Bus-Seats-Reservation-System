@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSeatsReservation.Data.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSeatsReservation.Models", "BusSeatsReservation.Models\BusSeatsReservation.Models.csproj", "{28061CF9-DF66-4C09-B320-620AB85D272C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSeatsReservation.Client", "BusSeatsReservation.Client\BusSeatsReservation.Client.csproj", "{AF1D485E-7617-47BD-B81F-B0AC7DC1DE8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{28061CF9-DF66-4C09-B320-620AB85D272C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28061CF9-DF66-4C09-B320-620AB85D272C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28061CF9-DF66-4C09-B320-620AB85D272C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF1D485E-7617-47BD-B81F-B0AC7DC1DE8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF1D485E-7617-47BD-B81F-B0AC7DC1DE8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF1D485E-7617-47BD-B81F-B0AC7DC1DE8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF1D485E-7617-47BD-B81F-B0AC7DC1DE8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
