@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BusSeatsReservation.Data.Common
+﻿namespace BusSeatsReservation.Data.Common
 {
-    interface IRepository
+    using System;
+    using System.Linq;
+    using System.Linq.Expressions;
+
+    interface IRepository<T>
     {
+        void Add(T entity);
+        void Delete(T entity);
+        IQueryable<T> Search(Expression<Func<T, bool>> predicate);
+        IQueryable<T> GetAll();
+        T GetByID(int id);
     }
 }
