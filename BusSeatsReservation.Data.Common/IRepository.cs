@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Linq.Expressions;
 
-    interface IRepository<T>
+    public interface IRepository<T>
     {
         void Add(T entity);
         void Delete(T entity);
