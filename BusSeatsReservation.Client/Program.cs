@@ -16,15 +16,15 @@ namespace BusSeatsReservation.Client
 
             var user = new User("FirstName", "LastName");
 
-            var reservation = new Reservation(10, new DateTime().Date);
+            var reservation = new Reservation(10, DateTime.Now);
 
             user.Reservations.Add(reservation);
 
             sqlDbContext.Users.Add(user);
             sqlDbContext.Reservations.Add(reservation);
 
-            sqlDbContext.SaveChanges();
 
+            sqlDbContext.SaveChanges();
 
         }
     }
