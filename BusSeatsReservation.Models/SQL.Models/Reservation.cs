@@ -8,6 +8,11 @@ namespace BusSeatsReservation.Models.SQL.Models
 {
     public class Reservation
     {
+
+        public Reservation()
+        {
+        }
+
         public Reservation(decimal price, DateTime date)
         {
             this.Price = price;

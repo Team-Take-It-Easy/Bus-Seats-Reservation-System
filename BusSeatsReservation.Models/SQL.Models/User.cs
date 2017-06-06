@@ -10,6 +10,11 @@ namespace BusSeatsReservation.Models.SQL.Models
     {
         private ICollection<Reservation> reservations;
 
+        public User()
+        {
+            this.reservations = new HashSet<Reservation>();
+        }
+
         public User(string firstName, string lastName)
         {
             this.FirstName = firstName;
