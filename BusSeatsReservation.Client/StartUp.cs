@@ -78,6 +78,20 @@ namespace BusSeatsReservation.Client
             Console.WriteLine("-------------------using PostgreSQLProvider---------------------");
 
             //Console.WriteLine(postgreSQLDataProvider.BusesRepository.GetByID(1).RegistrationNumber);
+
+            Console.WriteLine("Unit of work");
+
+            var newNewUser = new User("Gosho", "Peshov");
+            var unitOfWork = new EfUnitOfWork(sqlDbContext);
+
+            unitOfWork.UserRepository.Add(newNewUser);
+            unitOfWork.Commit();
+            var usersArr = unitOfWork.UserRepository.GetAll();
+
+            foreach (var u in usersArr)
+            {
+                Console.WriteLine($"First name: {u.FirstName}; Last name: {u.LastName}");
+            }
         }
     }
 }
