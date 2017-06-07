@@ -10,9 +10,9 @@ namespace BusSeatsReservation.Data.Common.DataProviders
     public class PostgreSQLDataProvider: IDataProvider
     {
         private IUnitOfWork unitOfWork;
-        private IRepository<Bus> busesRepository;
+        private IRepository<BusType> busesRepository;
 
-        public PostgreSQLDataProvider(IUnitOfWork unitOfWork, IRepository<Bus> busesRepository)
+        public PostgreSQLDataProvider(IUnitOfWork unitOfWork, IRepository<BusType> busesRepository)
         {
             this.UnitOfWork = unitOfWork;
             this.BusesRepository = busesRepository;
@@ -32,7 +32,7 @@ namespace BusSeatsReservation.Data.Common.DataProviders
             }
         }
 
-        public IRepository<Bus> BusesRepository
+        public IRepository<BusType> BusesRepository
         {
             get
             {

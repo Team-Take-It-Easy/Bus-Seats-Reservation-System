@@ -9,6 +9,7 @@ namespace BusSeatsReservation.Models.SQL.Models
     public class User
     {
         private ICollection<Reservation> reservations;
+        private ICollection<Seat> seats;
 
         public User()
         {
@@ -40,5 +41,19 @@ namespace BusSeatsReservation.Models.SQL.Models
                 this.reservations = value;
             }
         }
+
+        public virtual ICollection<Seat> ReservedSeats
+        {
+            get
+            {
+                return this.seats;
+            }
+
+            set
+            {
+                this.seats = value;
+            }
+        }
+
     }
 }

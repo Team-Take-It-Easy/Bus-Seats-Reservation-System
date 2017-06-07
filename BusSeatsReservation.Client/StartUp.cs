@@ -13,7 +13,7 @@ using BusSeatsReservation.Data.PostgreSQL;
 
 namespace BusSeatsReservation.Client
 {
-    public class Program
+    public class StartUp
     {
         public static void Main()
         {
@@ -63,21 +63,21 @@ namespace BusSeatsReservation.Client
             // PostgreSQL Data provider
 
             var postgreSQLDbContext = new PostgreSQLDbContext();
-            var busesRepository = new SQLRepository<Bus>(postgreSQLDbContext);
+            var busesRepository = new SQLRepository<BusType>(postgreSQLDbContext);
 
             var postgreSQLUnitOfWork = new EfUnitOfWork(postgreSQLDbContext);
 
             var postgreSQLDataProvider = new PostgreSQLDataProvider(postgreSQLUnitOfWork, busesRepository);
 
-            var bus = new Bus("CA 1234 BP", 1);
+            var busType = new BusType("Standard");
 
-            postgreSQLDataProvider.BusesRepository.Add(bus);
+            postgreSQLDataProvider.BusesRepository.Add(busType);
 
             postgreSQLDataProvider.UnitOfWork.Commit();
 
             Console.WriteLine("-------------------using PostgreSQLProvider---------------------");
 
-            Console.WriteLine(postgreSQLDataProvider.BusesRepository.GetByID(1).RegistrationNumber);
+            //Console.WriteLine(postgreSQLDataProvider.BusesRepository.GetByID(1).RegistrationNumber);
         }
     }
 }

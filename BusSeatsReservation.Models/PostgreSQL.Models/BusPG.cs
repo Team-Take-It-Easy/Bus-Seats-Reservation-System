@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace BusSeatsReservation.Models.PostgreSQL.Models
 {
-    public class Bus
+    public class BusPG
     {
         //private ICollection<Reservation> reservations;
 
-        public Bus()
+        public BusPG()
         {
             //this.reservations = new HashSet<Reservation>();
         }
 
-        public Bus(string registrationNumber, int reservationId)
+        public BusPG(string registrationNumber, int reservationId)
         {
             //this.reservations = new HashSet<Reservation>();
             this.RegistrationNumber = registrationNumber;

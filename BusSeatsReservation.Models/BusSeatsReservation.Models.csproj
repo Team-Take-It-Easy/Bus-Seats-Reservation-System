@@ -40,9 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PostgreSQL.Models\BusType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PostgreSQL.Models\Bus.cs" />
+    <Compile Include="PostgreSQL.Models\BusPG.cs" />
+    <Compile Include="SQL.Models\Bus.cs" />
+    <Compile Include="SQL.Models\Day.cs" />
+    <Compile Include="SQL.Models\Destination.cs" />
+    <Compile Include="SQL.Models\Hour.cs" />
     <Compile Include="SQL.Models\Reservation.cs" />
+    <Compile Include="SQL.Models\Route.cs" />
+    <Compile Include="SQL.Models\Seat.cs" />
     <Compile Include="SQL.Models\User.cs" />
   </ItemGroup>
   <ItemGroup>
