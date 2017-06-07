@@ -1,32 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BusSeatsReservation.Models.SQL.Models
 {
     public class User
     {
         private ICollection<Reservation> reservations;
-        private ICollection<Seat> seats;
 
         public User()
         {
-            this.reservations = new HashSet<Reservation>();
+            this.Reservations = new HashSet<Reservation>();
         }
 
-        public User(string firstName, string lastName)
+        public User(string userName, string firstName, string lastName)
         {
+            this.UserName = userName;
             this.FirstName = firstName;
             this.LastName = lastName;
-            this.reservations = new HashSet<Reservation>();
+            this.Reservations = new HashSet<Reservation>();
         }
 
+        [Key]
         public int Id { get; set; }
+
+        [Required]
+        [Index(IsUnique = true)]
+        [MinLength(5)]
+        [MaxLength(30)]
+        public string UserName { get; set; }
 
         public string FirstName { get; set; }
 
+        [Required]
+        [MinLength(2)]
+        [MaxLength(50)]
         public string LastName { get; set; }
 
         public virtual ICollection<Reservation> Reservations
@@ -41,19 +49,5 @@ namespace BusSeatsReservation.Models.SQL.Models
                 this.reservations = value;
             }
         }
-
-        public virtual ICollection<Seat> ReservedSeats
-        {
-            get
-            {
-                return this.seats;
-            }
-
-            set
-            {
-                this.seats = value;
-            }
-        }
-
     }
 }

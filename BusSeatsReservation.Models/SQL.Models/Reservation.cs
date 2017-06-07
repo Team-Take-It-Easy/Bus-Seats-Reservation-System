@@ -1,30 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BusSeatsReservation.Models.SQL.Models
 {
     public class Reservation
     {
 
-        public Reservation()
-        {
-        }
+        public Reservation() { }
 
-        public Reservation(decimal price, DateTime date)
-        {
-            this.Price = price;
-            this.Date = date;
-        }
-
+        [Key]
         public int Id { get; set; }
 
-        public decimal Price { get; set; }
+        [Required]
+        public Trip Trip { get; set; }
 
-        public DateTime Date { get; set; }        
+        public Seat Seat { get; set; }
 
-        // destination, date of departure, date of arrival, number of seats/tickets
+        public User User { get; set; }
     }
 }

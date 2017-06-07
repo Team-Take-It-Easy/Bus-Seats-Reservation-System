@@ -11,13 +11,13 @@ namespace BusSeatsReservation.Data.Common
     {
         private DbContext context;
         private SQLRepository<Bus> busRepository;
-        private SQLRepository<Day> dayRepository;
         private SQLRepository<Destination> destinationRepository;
-        private SQLRepository<Hour> hourRepository;
         private SQLRepository<Reservation> reservationRepository;
         private SQLRepository<Route> routeRepository;
         private SQLRepository<Seat> seatRepository;
         private SQLRepository<User> userRepository;
+        private SQLRepository<Trip> tripRepository;
+
 
         public EfUnitOfWork(DbContext context)
         {
@@ -36,18 +36,6 @@ namespace BusSeatsReservation.Data.Common
             }
         }
 
-        public SQLRepository<Day> DayRepository
-        {
-            get
-            {
-                if (this.dayRepository == null)
-                {
-                    this.dayRepository = new SQLRepository<Day>(context);
-                }
-                return this.dayRepository;
-            }
-        }
-
         public SQLRepository<Destination> DestinationRepository
         {
             get
@@ -60,15 +48,15 @@ namespace BusSeatsReservation.Data.Common
             }
         }
 
-        public SQLRepository<Hour> HourRepository
+        public SQLRepository<Trip> TripRepository
         {
             get
             {
-                if (this.hourRepository == null)
+                if (this.tripRepository == null)
                 {
-                    this.hourRepository = new SQLRepository<Hour>(context);
+                    this.tripRepository = new SQLRepository<Trip>(context);
                 }
-                return this.hourRepository;
+                return this.tripRepository;
             }
         }
 

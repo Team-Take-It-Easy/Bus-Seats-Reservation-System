@@ -1,8 +1,8 @@
 ﻿namespace BusSeatsReservation.Models.PostgreSQL.Models
 {
-    public class BusType
+    public class BusTypePG
     {
-        public BusType(string name)
+        public BusTypePG(string name)
         {
             this.Name = name;
         }

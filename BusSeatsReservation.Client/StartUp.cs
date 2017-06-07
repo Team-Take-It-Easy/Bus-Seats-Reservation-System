@@ -19,15 +19,11 @@ namespace BusSeatsReservation.Client
         {
             var sqlDbContext = new SQLDbContext();
 
-            var user = new User("FirstName", "LastName");
-
-            var reservation = new Reservation(10, DateTime.Now);
-
-            user.Reservations.Add(reservation);
+            var user = new User("user1", "FirstName", "LastName");
+            var destination = new Destination("Sofia");
 
             sqlDbContext.Users.Add(user);
-            sqlDbContext.Reservations.Add(reservation);
-
+            sqlDbContext.Destinations.Add(destination);
 
             sqlDbContext.SaveChanges();
 
@@ -37,7 +33,6 @@ namespace BusSeatsReservation.Client
             var reservationsRepository = new SQLRepository<Reservation>(sqlDbContext);
 
             Console.WriteLine(usersRepository.GetByID(1).FirstName);
-            Console.WriteLine(reservationsRepository.GetByID(1).Date);
 
             // with Repository and UnitOfWork
 
@@ -45,31 +40,27 @@ namespace BusSeatsReservation.Client
 
             var sqlDataProvider = new SQLDataProvider(sqlUnitOfWork, usersRepository, reservationsRepository);
 
-            var newUser = new User("Pesho", "Ivanov");
-            var newReservation = new Reservation(20, DateTime.Now);
+            var newUser = new User("user2", "Pesho", "Ivanov");
 
-            newUser.Reservations.Add(newReservation);
 
             Console.WriteLine("-------------------using sqlDataProvider---------------------");
 
             sqlDataProvider.UsersRepository.Add(newUser);
-            sqlDataProvider.ReservationsRepository.Add(newReservation);
 
             sqlDataProvider.UnitOfWork.Commit();
 
             Console.WriteLine(sqlDataProvider.UsersRepository.GetByID(2).FirstName);
-            Console.WriteLine(sqlDataProvider.ReservationsRepository.GetByID(2).Price);
 
             // PostgreSQL Data provider
 
             var postgreSQLDbContext = new PostgreSQLDbContext();
-            var busesRepository = new SQLRepository<BusType>(postgreSQLDbContext);
+            var busesRepository = new SQLRepository<BusTypePG>(postgreSQLDbContext);
 
             var postgreSQLUnitOfWork = new EfUnitOfWork(postgreSQLDbContext);
 
             var postgreSQLDataProvider = new PostgreSQLDataProvider(postgreSQLUnitOfWork, busesRepository);
 
-            var busType = new BusType("Standard");
+            var busType = new BusTypePG("Standard");
 
             postgreSQLDataProvider.BusesRepository.Add(busType);
 
@@ -81,17 +72,17 @@ namespace BusSeatsReservation.Client
 
             Console.WriteLine("Unit of work");
 
-            var newNewUser = new User("Gosho", "Peshov");
+            var newNewUser = new User("user3", "Gosho", "Peshov");
             var unitOfWork = new EfUnitOfWork(sqlDbContext);
 
             unitOfWork.UserRepository.Add(newNewUser);
             unitOfWork.Commit();
-            var usersArr = unitOfWork.UserRepository.GetAll();
+            //var usersArr = unitOfWork.UserRepository.GetAll();
 
-            foreach (var u in usersArr)
-            {
-                Console.WriteLine($"First name: {u.FirstName}; Last name: {u.LastName}");
-            }
+            //foreach (var u in usersArr)
+            //{
+            //    Console.WriteLine($"First name: {u.FirstName}; Last name: {u.LastName}");
+            //}
         }
     }
 }

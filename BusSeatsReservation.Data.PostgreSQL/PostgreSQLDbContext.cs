@@ -19,6 +19,6 @@ namespace BusSeatsReservation.Data.PostgreSQL
 
         public DbSet<BusPG> Buses{ get; set; }
 
-        public DbSet<BusType> BusTypes { get; set; }
+        public DbSet<BusTypePG> BusTypes { get; set; }
     }
 }

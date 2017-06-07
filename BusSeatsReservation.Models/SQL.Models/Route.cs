@@ -1,33 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BusSeatsReservation.Models.SQL.Models
 {
     public class Route
     {
-        private ICollection<Seat> seats;
-
         public Route() { }
 
+        [Key]
         public int Id { get; set; }
 
-        public Destination StartFrom { get; set; }
+        [Required]
+        public Destination FromDestination { get; set; }
 
-        public Destination GoingTo { get; set; }
+        [Required]
+        public Destination ToDestination { get; set; }
 
-        public Day Date { get; set; }
+        public DateTime DayOfWeek { get; set; }
 
-        public Hour DepatureHour { get; set; }
+        public DateTime DepatureHour { get; set; }
 
-        public Bus Bus { get; set; }
-
-        public virtual ICollection<Seat> Seats
-        {
-            get { return this.seats; }
-            set { this.seats = value; }
-        }
+        public decimal? Price { get; set; }
     }
 }
