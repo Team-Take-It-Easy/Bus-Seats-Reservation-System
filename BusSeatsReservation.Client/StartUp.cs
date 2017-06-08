@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using BusSeatsReservation.Data;
 using BusSeatsReservation.Data.Common;
 using BusSeatsReservation.Models.SQL.Models;
-using BusSeatsReservation.Data.Common.DataProviders;
 using BusSeatsReservation.Models.PostgreSQL.Models;
 using BusSeatsReservation.Data.PostgreSQL;
 using BusSeatsReservation.Models.SQLite.Models;
@@ -38,40 +37,25 @@ namespace BusSeatsReservation.Client
             Console.WriteLine(usersRepository.GetByID(1).FirstName);
 
             // with Repository and UnitOfWork
+            
+            Console.WriteLine("-------------------SQL Repository and Unit Of Work ---------------------");
 
-            var sqlUnitOfWork = new EfUnitOfWork(sqlDbContext);
-
-            var sqlDataProvider = new SQLDataProvider(sqlUnitOfWork, usersRepository, reservationsRepository);
-
-            var newUser = new User("user2", "Pesho", "Ivanov");
-
-
-            Console.WriteLine("-------------------using sqlDataProvider---------------------");
-
-            sqlDataProvider.UsersRepository.Add(newUser);
-
-            sqlDataProvider.UnitOfWork.Commit();
-
-            Console.WriteLine(sqlDataProvider.UsersRepository.GetByID(2).FirstName);
-
-            // PostgreSQL Data provider
+            // PostgreSQL with DbContext - ? TODO: make UnitOfWork
 
             var postgreSQLDbContext = new PostgreSQLDbContext();
             var busesRepository = new SQLRepository<BusTypePG>(postgreSQLDbContext);
 
             var postgreSQLUnitOfWork = new EfUnitOfWork(postgreSQLDbContext);
 
-            var postgreSQLDataProvider = new PostgreSQLDataProvider(postgreSQLUnitOfWork, busesRepository);
-
             var busType = new BusTypePG("Standard");
 
-            postgreSQLDataProvider.BusesRepository.Add(busType);
+            busesRepository.Add(busType);
 
-            postgreSQLDataProvider.UnitOfWork.Commit();
+            postgreSQLDbContext.SaveChanges();
 
-            Console.WriteLine("-------------------using PostgreSQLProvider---------------------");
+            Console.WriteLine("------------------- PostgreSQL Database ---------------------");
 
-            //Console.WriteLine(postgreSQLDataProvider.BusesRepository.GetByID(1).RegistrationNumber);
+            Console.WriteLine(busesRepository.GetByID(1));
 
             Console.WriteLine("Unit of work");
 
@@ -87,7 +71,7 @@ namespace BusSeatsReservation.Client
             //    Console.WriteLine($"First name: {u.FirstName}; Last name: {u.LastName}");
             //}
             
-            // SQLite Connection
+            // SQLite Connection - ? TODO: UnitOfWork
             var report = new Report("Test Report");
 
             var sqLiteDbContext = new SQLiteDbContext();
