@@ -10,6 +10,8 @@ using BusSeatsReservation.Models.SQL.Models;
 using BusSeatsReservation.Data.Common.DataProviders;
 using BusSeatsReservation.Models.PostgreSQL.Models;
 using BusSeatsReservation.Data.PostgreSQL;
+using BusSeatsReservation.Models.SQLite.Models;
+using BusSeatsReservation.Data.SQLite;
 
 namespace BusSeatsReservation.Client
 {
@@ -17,6 +19,7 @@ namespace BusSeatsReservation.Client
     {
         public static void Main()
         {
+            
             var sqlDbContext = new SQLDbContext();
 
             var user = new User("user1", "FirstName", "LastName");
@@ -83,6 +86,21 @@ namespace BusSeatsReservation.Client
             //{
             //    Console.WriteLine($"First name: {u.FirstName}; Last name: {u.LastName}");
             //}
+            
+            // SQLite Connection
+            var report = new Report("Test Report");
+
+            var sqLiteDbContext = new SQLiteDbContext();
+
+            var sqLiteRepository = new SQLRepository<Report>(sqLiteDbContext);
+
+            sqLiteRepository.Add(report);
+
+            sqLiteDbContext.SaveChanges();
+
+            Console.WriteLine("------------------------SQLite Database-------------------------------");
+
+            Console.WriteLine(sqLiteRepository.GetByID(1).Title);
         }
     }
 }
