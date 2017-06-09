@@ -5,6 +5,11 @@ namespace BusSeatsReservation.Models.SQL.Models
 {
     public class Destination
     {
+        public Destination()
+        {
+
+        }
+
         public Destination(string name)
         {
             this.Name = name;

@@ -5,6 +5,11 @@ namespace BusSeatsReservation.Models.SQL.Models
 {
     public class Bus
     {
+        public Bus()
+        {
+
+        }
+
         public Bus(BusType type, int numberOfSeats, string regNumber)
         {
             this.Type = type;
