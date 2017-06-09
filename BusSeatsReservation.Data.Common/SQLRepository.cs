@@ -8,17 +8,14 @@
 
     public class SQLRepository<T> : IRepository<T> where T:class
     {
-        private DbContext context;
-        private DbSet sqlDbSet;
-
         public SQLRepository(DbContext context)
         {
             this.Context = context;
             this.SqlDbSet = this.Context.Set<T>();
         }
 
-        public DbContext Context { get; protected set; }
-        public DbSet<T> SqlDbSet { get; protected set; }
+        private DbContext Context { get; set; }
+        private DbSet<T> SqlDbSet { get; set; }
 
         public void Add(T entity)
         {
