@@ -11,6 +11,7 @@ using BusSeatsReservation.Models.PostgreSQL.Models;
 using BusSeatsReservation.Data.PostgreSQL;
 using BusSeatsReservation.Models.SQLite.Models;
 using BusSeatsReservation.Data.SQLite;
+using BusSeatsReservation.Data.Common.Factories;
 
 namespace BusSeatsReservation.Client
 {
@@ -20,6 +21,7 @@ namespace BusSeatsReservation.Client
         {
             
             var sqlDbContext = new SQLDbContext();
+            var repositoryFactory = new RepositoryFactory();
 
             var user = new User("user1", "FirstName", "LastName");
             var destination = new Destination("Sofia");
@@ -45,7 +47,7 @@ namespace BusSeatsReservation.Client
             var postgreSQLDbContext = new PostgreSQLDbContext();
             var busesRepository = new SQLRepository<BusTypePG>(postgreSQLDbContext);
 
-            var postgreSQLUnitOfWork = new EfUnitOfWork(postgreSQLDbContext);
+            var postgreSQLUnitOfWork = new EfUnitOfWork(postgreSQLDbContext, repositoryFactory);
 
             var busType = new BusTypePG("Standard");
 
@@ -60,7 +62,7 @@ namespace BusSeatsReservation.Client
             Console.WriteLine("Unit of work");
 
             var newNewUser = new User("user3", "Gosho", "Peshov");
-            var unitOfWork = new EfUnitOfWork(sqlDbContext);
+            var unitOfWork = new EfUnitOfWork(sqlDbContext, repositoryFactory);
 
             unitOfWork.UserRepository.Add(newNewUser);
             unitOfWork.Commit();

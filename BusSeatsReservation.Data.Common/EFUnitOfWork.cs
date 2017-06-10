@@ -5,11 +5,13 @@ namespace BusSeatsReservation.Data.Common
     using System;
     using System.Data.Entity;
 
+    using Factories;
     using Models.SQL.Models;
 
     public class EfUnitOfWork : IUnitOfWork, IDisposable
     {
         private DbContext context;
+        private IRepositoryFactory repositoryFactory;
         private SQLRepository<Bus> busRepository;
         private SQLRepository<Destination> destinationRepository;
         private SQLRepository<Reservation> reservationRepository;
@@ -19,9 +21,10 @@ namespace BusSeatsReservation.Data.Common
         private SQLRepository<Trip> tripRepository;
 
 
-        public EfUnitOfWork(DbContext context)
+        public EfUnitOfWork(DbContext context, IRepositoryFactory repositoryFactory)
         {
             this.context = context;
+            this.repositoryFactory = repositoryFactory;
         }
 
         public SQLRepository<Bus> BusRepository
@@ -30,7 +33,7 @@ namespace BusSeatsReservation.Data.Common
             {
                 if (this.busRepository == null)
                 {
-                    this.busRepository = new SQLRepository<Bus>(context);
+                    this.busRepository = repositoryFactory.CreateRepository<Bus>(context);
                 }
                 return this.busRepository;
             }
@@ -42,7 +45,7 @@ namespace BusSeatsReservation.Data.Common
             {
                 if (this.destinationRepository == null)
                 {
-                    this.destinationRepository = new SQLRepository<Destination>(context);
+                    this.destinationRepository = repositoryFactory.CreateRepository<Destination>(context);
                 }
                 return this.destinationRepository;
             }
@@ -54,7 +57,7 @@ namespace BusSeatsReservation.Data.Common
             {
                 if (this.tripRepository == null)
                 {
-                    this.tripRepository = new SQLRepository<Trip>(context);
+                    this.tripRepository = this.repositoryFactory.CreateRepository<Trip>(context);
                 }
                 return this.tripRepository;
             }
@@ -66,7 +69,7 @@ namespace BusSeatsReservation.Data.Common
             {
                 if (this.reservationRepository == null)
                 {
-                    this.reservationRepository = new SQLRepository<Reservation>(context);
+                    this.reservationRepository = this.repositoryFactory.CreateRepository<Reservation>(context);
                 }
                 return this.reservationRepository;
             }
@@ -78,7 +81,7 @@ namespace BusSeatsReservation.Data.Common
             {
                 if (this.routeRepository == null)
                 {
-                    this.routeRepository = new SQLRepository<Route>(context);
+                    this.routeRepository = this.repositoryFactory.CreateRepository<Route>(context);
                 }
                 return this.routeRepository;
             }
@@ -90,7 +93,7 @@ namespace BusSeatsReservation.Data.Common
             {
                 if (this.seatRepository == null)
                 {
-                    this.seatRepository = new SQLRepository<Seat>(context);
+                    this.seatRepository = this.repositoryFactory.CreateRepository<Seat>(context);
                 }
                 return this.seatRepository;
             }
@@ -102,7 +105,7 @@ namespace BusSeatsReservation.Data.Common
             {
                 if (this.userRepository == null)
                 {
-                    this.userRepository = new SQLRepository<User>(context);
+                    this.userRepository = repositoryFactory.CreateRepository<User>(context);
                 }
                 return this.userRepository;
             }
