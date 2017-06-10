@@ -9,6 +9,7 @@
     {
         void Add(T entity);
         void Delete(T entity);
+        void Update(T entity);
         IEnumerable<T> Search(Expression<Func<T, bool>> predicate);
         IEnumerable<T> GetAll();
         T GetByID(int id);

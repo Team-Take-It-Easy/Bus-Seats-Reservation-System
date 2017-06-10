@@ -55,7 +55,7 @@ namespace BusSeatsReservation.Client
 
             Console.WriteLine("------------------- PostgreSQL Database ---------------------");
 
-            Console.WriteLine(busesRepository.GetByID(1));
+            //Console.WriteLine(busesRepository.GetByID(1));
 
             Console.WriteLine("Unit of work");
 
@@ -70,7 +70,50 @@ namespace BusSeatsReservation.Client
             //{
             //    Console.WriteLine($"First name: {u.FirstName}; Last name: {u.LastName}");
             //}
-            
+
+
+            // testing Delete and Update methods
+
+            var newDestination = new Destination("Plovdiv");
+
+            unitOfWork.DestinationRepository.Add(newDestination);
+
+            unitOfWork.Commit();
+            var destinations = unitOfWork.DestinationRepository.GetAll();
+
+            foreach (var town in destinations)
+            {
+                Console.WriteLine("Id: {0}, Name: {1}", town.Id, town.Name);
+            }
+
+            Console.WriteLine("-----Update---------");
+
+            newDestination.Name = "Varna";
+
+            unitOfWork.DestinationRepository.Update(newDestination);
+
+            destinations = unitOfWork.DestinationRepository.GetAll();
+
+            foreach (var town in destinations)
+            {
+                Console.WriteLine("Id: {0}, Name: {1}", town.Id, town.Name);
+            }
+
+            Console.WriteLine("-------------Delete----------------");
+
+            unitOfWork.DestinationRepository.Delete(newDestination);
+
+            unitOfWork.Commit();
+
+            destinations = unitOfWork.DestinationRepository.GetAll();
+
+            foreach (var town in destinations)
+            {
+                Console.WriteLine("Id: {0}, Name: {1}", town.Id, town.Name);
+            }
+
+            unitOfWork.Commit();
+
             // SQLite Connection - ? TODO: UnitOfWork
             var report = new Report("Test Report");
 

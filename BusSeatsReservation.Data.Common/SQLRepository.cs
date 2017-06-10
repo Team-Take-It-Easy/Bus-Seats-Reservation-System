@@ -22,6 +22,13 @@
             this.SqlDbSet.Add(entity);
         }
 
+        public void Update(T entity)
+        {
+            var entry = this.Context.Entry(entity);
+
+            entry.State = EntityState.Modified;
+        }
+
         public void Delete(T entity)
         {
             this.SqlDbSet.Remove(entity);
