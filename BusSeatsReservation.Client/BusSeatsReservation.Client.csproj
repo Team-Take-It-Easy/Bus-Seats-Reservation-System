@@ -47,6 +47,13 @@
       <HintPath>..\packages\EntityFramework6.Npgsql.3.1.1\lib\net45\EntityFramework6.Npgsql.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.11.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.11\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -96,7 +103,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Data\buses_input.json" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusSeatsReservation.Data.Common\BusSeatsReservation.Data.Common.csproj">
@@ -118,6 +127,10 @@
     <ProjectReference Include="..\BusSeatsReservation.Models\BusSeatsReservation.Models.csproj">
       <Project>{28061cf9-df66-4c09-b320-620ab85d272c}</Project>
       <Name>BusSeatsReservation.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusSeatsReservation.Reports\BusSeatsReservation.Reports.csproj">
+      <Project>{65dbfabb-eab3-468c-b109-406435b82749}</Project>
+      <Name>BusSeatsReservation.Reports</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

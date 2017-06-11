@@ -14,6 +14,7 @@ using BusSeatsReservation.Data.SQLite;
 using BusSeatsReservation.Data.Common.Factories;
 using Newtonsoft.Json.Linq;
 using System.IO;
+using BusSeatsReservation.Reports;
 
 namespace BusSeatsReservation.Client
 {
@@ -26,7 +27,10 @@ namespace BusSeatsReservation.Client
 
             var unitOfWork = new EfUnitOfWork(sqlDbContext, repositoryFactory);
 
-            LoadInitialData(unitOfWork);
+            //LoadInitialData(unitOfWork);
+
+            var allUsers = unitOfWork.UserRepository.GetAll();
+            PdfReport.GeneratePDFUsers(allUsers);
 
             //var user = new User("user1", "FirstName", "LastName");
             //var destination = new Destination("Sofia");
@@ -44,7 +48,7 @@ namespace BusSeatsReservation.Client
             //Console.WriteLine(usersRepository.GetByID(1).FirstName);
 
             //// with Repository and UnitOfWork
-            
+
             //Console.WriteLine("-------------------SQL Repository and Unit Of Work ---------------------");
 
             //// PostgreSQL with DbContext - ? TODO: make UnitOfWork
@@ -138,7 +142,7 @@ namespace BusSeatsReservation.Client
 
         public static void LoadInitialData(EfUnitOfWork unitOfWork)
         {
-            string path = @"..\\..\\Data\buses_input.json";
+            string path = @"..\..\Data\buses_input.json";
             string json = File.ReadAllText(path);
 
             JObject allSearch = JObject.Parse(json);
