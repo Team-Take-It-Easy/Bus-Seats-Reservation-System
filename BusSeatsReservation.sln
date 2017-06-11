@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSeatsReservation", "BusSeatsReservation\BusSeatsReservation.csproj", "{8973D27E-668E-458E-B33D-22CADF5394A6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSeatsReservation.Data", "BusSeatsReservation.Data\BusSeatsReservation.Data.csproj", "{9267312A-73A1-4817-A6C8-A9145EB66FEB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSeatsReservation.Data.Common", "BusSeatsReservation.Data.Common\BusSeatsReservation.Data.Common.csproj", "{76BA3948-B661-43A1-BFE4-9C1C700A1C58}"
@@ -19,16 +17,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSeatsReservation.Data.SQ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSeatsReservation.WebClient", "BusSeatsReservation.WebClient\BusSeatsReservation.WebClient.csproj", "{DD749D59-1C68-4588-93AE-078EF96CC6E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSeatsReservation.ConsoleClient", "BusSeatsReservation.ConsoleClient\BusSeatsReservation.ConsoleClient.csproj", "{31D5AB23-4EFD-4A22-9452-29E3A852A1B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8973D27E-668E-458E-B33D-22CADF5394A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8973D27E-668E-458E-B33D-22CADF5394A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8973D27E-668E-458E-B33D-22CADF5394A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8973D27E-668E-458E-B33D-22CADF5394A6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9267312A-73A1-4817-A6C8-A9145EB66FEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9267312A-73A1-4817-A6C8-A9145EB66FEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9267312A-73A1-4817-A6C8-A9145EB66FEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,6 +53,10 @@ Global
 		{DD749D59-1C68-4588-93AE-078EF96CC6E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD749D59-1C68-4588-93AE-078EF96CC6E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD749D59-1C68-4588-93AE-078EF96CC6E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31D5AB23-4EFD-4A22-9452-29E3A852A1B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31D5AB23-4EFD-4A22-9452-29E3A852A1B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31D5AB23-4EFD-4A22-9452-29E3A852A1B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31D5AB23-4EFD-4A22-9452-29E3A852A1B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
