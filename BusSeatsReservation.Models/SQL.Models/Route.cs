@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -6,7 +7,13 @@ namespace BusSeatsReservation.Models.SQL.Models
 {
     public class Route
     {
-        public Route() { }
+        private ICollection<Bus> buses;
+
+        public Route()
+        {
+            this.Buses = new HashSet<Bus>();
+
+        }
 
         [Key]
         public int Id { get; set; }
@@ -22,5 +29,19 @@ namespace BusSeatsReservation.Models.SQL.Models
         public DateTime DepatureHour { get; set; }
 
         public decimal? Price { get; set; }
+
+        public virtual ICollection<Bus> Buses
+        {
+            get
+            {
+                return this.buses;
+            }
+
+            set
+            {
+                this.buses = value;
+            }
+        }
+
     }
 }

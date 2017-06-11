@@ -11,5 +11,8 @@ namespace BusSeatsReservation.Models.SQL.Models
 
         [Required]
         public string Label { get; set; }
+
+        [Required]
+        public Bus Bus { get; set; }
     }
 }

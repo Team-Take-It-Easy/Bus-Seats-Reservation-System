@@ -1,7 +1,9 @@
 ﻿namespace BusSeatsReservation.Data
 {
     using Models.SQL.Models;
+    using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity;
+    using System.Data.Entity.Infrastructure.Annotations;
     using System.Data.Entity.ModelConfiguration.Conventions;
 
     public class SQLDbContext : DbContext
@@ -29,6 +31,26 @@
         {
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+
+            modelBuilder.Entity<Route>()
+                .HasMany<Bus>(s => s.Buses)
+                .WithMany(c => c.Routes)
+                .Map(cs =>
+                {
+                    cs.MapLeftKey("RouteId");
+                    cs.MapRightKey("BusId");
+                    cs.ToTable("RouteBuses");
+                });
+
+            modelBuilder
+                .Entity<Bus>()
+                .Property(t => t.RegNumber)
+                .IsRequired()
+                .HasMaxLength(10)
+                .HasColumnAnnotation(
+                IndexAnnotation.AnnotationName,
+                     new IndexAnnotation(
+                        new IndexAttribute("IX_RegNumber", 1) { IsUnique = true }));
         }
     }
 }
