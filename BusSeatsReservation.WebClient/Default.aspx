@@ -4,9 +4,9 @@
 
     <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
     <div>
-        <a class="btn btn-default" href="#">Create reservation</a>
-        <a class="btn btn-default" href="#">Learn more</a>
-        <a class="btn btn-default" href="#">Learn more</a>
+        <a class="btn btn-default" href="#">Create user</a>
+        <a class="btn btn-default" href="#">Learn reservation</a>
+        <a class="btn btn-default" href="#">Learn bus</a>
     </div>
 
 </asp:Content>
