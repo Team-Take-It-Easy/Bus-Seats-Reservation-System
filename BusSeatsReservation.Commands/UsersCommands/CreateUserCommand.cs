@@ -1,7 +1,5 @@
 ﻿namespace BusSeatsReservation.Commands.UsersCommands
 {
-    using System.Collections.Generic;
-
     using Contracts;
     using Data.Common;
     using Models.SQL.Models;
@@ -21,9 +19,7 @@
         public IValidator Validator { get; protected set; }
         public IWriter Writer { get; set; }
         public IReader Reader { get; set; }
-
-        public User NewUser { get; set; }
-
+        
         public void Execute()
         {
             this.Writer.Write($"{Constants.CreateUser}\n{Constants.AskForUserName}");
@@ -46,8 +42,9 @@
                 lastName = this.Reader.Read();
             }
 
-            this.NewUser = new User(userName, firstName, lastName);
-            this.UnitOfWork.UserRepository.Add(NewUser);
+            var newUser = new User(userName, firstName, lastName);
+            this.UnitOfWork.UserRepository.Add(newUser);
+            this.UnitOfWork.Commit();
             this.Writer.Write(Constants.UserCreated);
         }
     }

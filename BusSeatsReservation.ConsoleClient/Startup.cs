@@ -35,7 +35,7 @@ namespace BusSeatsReservation.ConsoleClient
             var commandParser = new CommandParser();
             var engine = new Engine(reader, writer, commandsFactory, sqlUnitOfWork, validator, commandParser);
 
-            DataParser.LoadInitialData(sqlUnitOfWork);
+            //DataParser.LoadInitialData(sqlUnitOfWork);
 
             engine.Start();
         }

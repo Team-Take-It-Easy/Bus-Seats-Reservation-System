@@ -1,35 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BusSeatsReservation.Commands.Utils
+﻿namespace BusSeatsReservation.Commands.Utils
 {
     internal static class Constants
     {
         // Constant arrays
-        internal static readonly string[] CommandsList = { "Create", "Edit", "Delete", "Get all" };
-        internal static readonly string[] ModelsList = { "User", "Reservation", "Route", "Bus" };
+        internal static readonly string[] CommandsList = { "Create", "Update", "Delete", "All", "Exit" };
+        internal static readonly string[] ModelsList = { "User", "Reservation", "Route", "Bus", "App" };
 
         // UI strings
-        internal const string AskForCommand = @"Please, enter command from the following:
+        internal const string AskForCommandShort = "Please, enter command";
+        internal const string AskForCommandLong = @"Please, enter command from the following:
 Create user (creates new user);
-Edit user (edits given user);
+Update user (edits given user);
 Delete user (deletes given user);
-Get all users (returns a list of all the registered users);
+All users (returns a list of all the registered users);
 
 Create Reservation (creates new reservation);
-Edit reservation (edits given reservation);
+Update reservation (edits given reservation);
 Delete reservation (deletes given reservation);
-Get all reservation (returns a list of all the existing reservations of a given user);
+All reservations (returns a list of all the existing reservations of a given user);
 
 Create route (creates new route);
-Edit route (edits given route);
+Update route (edits given route);
 Delete route (deletes given route);
-Get all routes (returns a list of all the routes);";
+All routes (returns a list of all the routes);";
 
         internal const string ErrorInvalidCommand = "Wrong command, please choose one of the following:\n";
+        internal const string ExitMessage = "Your job here is done!";
 
         // Create user
         internal const string CreateUser = "Create user:";
@@ -37,6 +33,13 @@ Get all routes (returns a list of all the routes);";
         internal const string AskForFirstName = "Please, enter first name";
         internal const string AskForLastName = "Please, enter last name";
         internal const string UserCreated = "User created successfully!";
+
+        internal const string DeleteUser = "Delete user:";
+        internal const string AskForUserByUsername = "Please, enter the username of the user:";
+        internal const string SearchedUserDoesNotExist = "There is no user with this username!";
+        internal const string EntityDeletedSuccessfully = "deleted successfully";
+
+        internal const string AllUsers = "All users:";
 
         // User validations
         internal const string SuccessfullyCreatedUser = " successfully created!";
@@ -66,6 +69,7 @@ Get all routes (returns a list of all the routes);";
 
         // Destination validation
         internal const string ErrorDestinationNameMustBeUnique = "Error! This destination already exists!";
+        internal const string ErrorDestinationNameCannotBeNull = "Error! Please enter destination name!";
 
         // Route validation
         internal const string ErrorEmptyFromDestination = "Error! Please enter route starting position!";

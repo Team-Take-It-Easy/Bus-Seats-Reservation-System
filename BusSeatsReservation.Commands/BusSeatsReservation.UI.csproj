@@ -44,10 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusesCommands\CreateBusCommand.cs" />
-    <Compile Include="BusesCommands\DeleteBusCommand.cs" />
-    <Compile Include="BusesCommands\ListBussesCommand.cs" />
-    <Compile Include="BusesCommands\UpdateBusCommand.cs" />
     <Compile Include="Contracts\ICommand.cs" />
     <Compile Include="Contracts\ICommandParser.cs" />
     <Compile Include="Contracts\ICommandsFactory.cs" />
@@ -57,14 +53,15 @@
     <Compile Include="Engine.cs" />
     <Compile Include="Factories\CommandsFactory.cs" />
     <Compile Include="Readers\ConsoleReader.cs" />
+    <Compile Include="UsersCommands\AllUserCommand.cs" />
     <Compile Include="Utils\CommandParser.cs" />
     <Compile Include="Utils\DataParser.cs" />
+    <Compile Include="Utils\ExitAppCommand.cs" />
     <Compile Include="Utils\Validator.cs" />
     <Compile Include="Writers\ConsoleWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsersCommands\CreateUserCommand.cs" />
     <Compile Include="UsersCommands\DeleteUserCommand.cs" />
-    <Compile Include="UsersCommands\ListUsersCommand.cs" />
     <Compile Include="UsersCommands\UpdateUserCommand.cs" />
     <Compile Include="Utils\Constants.cs" />
   </ItemGroup>

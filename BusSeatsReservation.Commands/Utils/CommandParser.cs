@@ -23,7 +23,7 @@ namespace BusSeatsReservation.Commands.Utils
 
             if(commandTypeInfo == null)
             {
-                throw new ArgumentException($"{Constants.ErrorInvalidCommand}{Constants.AskForCommand}");
+                throw new ArgumentException($"{Constants.ErrorInvalidCommand}{Constants.AskForCommandLong}");
             }
 
             var command = Activator.CreateInstance(commandTypeInfo, unitOfWork, validator, writer, reader) as ICommand;

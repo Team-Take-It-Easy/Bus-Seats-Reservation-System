@@ -41,7 +41,7 @@
         {
             if(string.IsNullOrEmpty(destination.Name))
             {
-                // message
+                this.Writer.Write(Constants.ErrorDestinationNameCannotBeNull);
                 return false;
             }
 

@@ -33,7 +33,7 @@
 
         public void Start()
         {
-            this.Writer.Write(Constants.AskForCommand);
+            this.Writer.Write(Constants.AskForCommandLong);
             string commandString = "";
             string model = "";
             ICommand command;
@@ -47,6 +47,7 @@
                     if (input.ToLower().Contains(c.ToLower()))
                     {
                         commandString = c;
+                        break;
                     }
                 }
 
@@ -55,6 +56,7 @@
                     if (input.ToLower().Contains(m.ToLower()))
                     {
                         model = m;
+                        break;
                     }
                 }
                 
