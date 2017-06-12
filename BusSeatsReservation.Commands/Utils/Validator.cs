@@ -158,20 +158,27 @@
             return true;
         }
 
-        public bool Validate(string value, int minLength, int maxLength)
+        public bool Validate(string value, int minLength, int maxLength, string message = "")
         {
+            if(string.IsNullOrEmpty(value))
+            {
+                this.Writer.Write(Constants.ErrorStringCannotBeNull);
+                return false;
+            }
             if(value.Length < minLength || value.Length > maxLength)
             {
+                this.Writer.Write(message);
                 return false;
             }
 
             return true;
         }
 
-        public bool Validate(int value, int min, int max)
+        public bool Validate(int value, int min, int max, string message)
         {
             if(value < min || value > max)
             {
+                this.Writer.Write(message);
                 return false;
             }
 
