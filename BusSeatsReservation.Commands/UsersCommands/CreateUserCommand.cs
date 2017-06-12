@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BusSeatsReservation.Commands.UsersCommands
+﻿namespace BusSeatsReservation.Commands.UsersCommands
 {
+    using Data.Common;
+    using Contracts;
+    using Utils;
+
     class CreateUserCommand
     {
+        public CreateUserCommand(IUnitOfWork unitOfWork, IWriter iLogger)
+        {
+            this.UnitOfWork = unitOfWork;
+            this.ILogger = iLogger;
+        }
+
+        public IUnitOfWork UnitOfWork { get; protected set; }
+        public IWriter ILogger { get; protected set; }
+       
     }
 }

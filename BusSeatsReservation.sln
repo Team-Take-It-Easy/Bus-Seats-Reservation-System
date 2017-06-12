@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSeatsReservation.Reports
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSeatsReservation.ConsoleClient", "BusSeatsReservation.ConsoleClient\BusSeatsReservation.ConsoleClient.csproj", "{31D5AB23-4EFD-4A22-9452-29E3A852A1B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSeatsReservation.UI", "BusSeatsReservation.Commands\BusSeatsReservation.UI.csproj", "{02767B69-1D1A-4879-860A-ADB7AC781EB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{31D5AB23-4EFD-4A22-9452-29E3A852A1B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31D5AB23-4EFD-4A22-9452-29E3A852A1B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31D5AB23-4EFD-4A22-9452-29E3A852A1B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02767B69-1D1A-4879-860A-ADB7AC781EB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02767B69-1D1A-4879-860A-ADB7AC781EB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02767B69-1D1A-4879-860A-ADB7AC781EB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02767B69-1D1A-4879-860A-ADB7AC781EB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

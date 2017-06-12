@@ -1,6 +1,4 @@
-﻿
-
-namespace BusSeatsReservation.Data.Common
+﻿namespace BusSeatsReservation.Data.Common
 {
     using System;
     using System.Data.Entity;
@@ -19,7 +17,6 @@ namespace BusSeatsReservation.Data.Common
         private SQLRepository<Seat> seatRepository;
         private SQLRepository<User> userRepository;
         private SQLRepository<Trip> tripRepository;
-
 
         public EfUnitOfWork(DbContext context, IRepositoryFactory repositoryFactory)
         {

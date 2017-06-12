@@ -108,6 +108,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusSeatsReservation.Commands\BusSeatsReservation.UI.csproj">
+      <Project>{02767b69-1d1a-4879-860a-adb7ac781eb3}</Project>
+      <Name>BusSeatsReservation.UI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BusSeatsReservation.Data.Common\BusSeatsReservation.Data.Common.csproj">
       <Project>{76ba3948-b661-43a1-bfe4-9c1c700a1c58}</Project>
       <Name>BusSeatsReservation.Data.Common</Name>

@@ -8,5 +8,7 @@ namespace BusSeatsReservation.Commands.Utils
 {
     class Constants
     {
+        public const string AskForUserName = "Please, enter username:";
+        public const string SuccessfullyCreatedUser = " successfully created!";
     }
 }

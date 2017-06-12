@@ -1,34 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using BusSeatsReservation.Data;
-using BusSeatsReservation.Data.Common;
-using BusSeatsReservation.Models.SQL.Models;
-using BusSeatsReservation.Models.PostgreSQL.Models;
-using BusSeatsReservation.Data.PostgreSQL;
-using BusSeatsReservation.Models.SQLite.Models;
-using BusSeatsReservation.Data.SQLite;
-using BusSeatsReservation.Data.Common.Factories;
-using Newtonsoft.Json.Linq;
-using System.IO;
-using BusSeatsReservation.Reports;
-
-namespace BusSeatsReservation.Client
+﻿namespace BusSeatsReservation.Client
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.IO;
+
+    using Data;
+    using Data.Common.UnitsOfWork;
+    using Models.SQL.Models;
+    using Models.PostgreSQL.Models;
+    using Data.PostgreSQL;
+    using Models.SQLite.Models;
+    using Data.SQLite;
+    using Data.Common.Factories;
+    using Newtonsoft.Json.Linq;
+    using Reports;
+    using Data.Common;
+    using Commands.Readers;
+
     public class StartUp
     {
         public static void Main()
         {
-            var sqlDbContext = new SQLDbContext();
-            var repositoryFactory = new RepositoryFactory();
+            var reader = new ConsoleReader();
+            string input = reader.Read();
+            Console.WriteLine(input);
+            //var sqlDbContext = new SQLDbContext();
+            //var repositoryFactory = new RepositoryFactory();
 
-            var unitOfWork = new EfUnitOfWork(sqlDbContext, repositoryFactory);
+            //var unitOfWork = new EfUnitOfWork(sqlDbContext, repositoryFactory);
 
             //LoadInitialData(unitOfWork);
 
-            var allUsers = unitOfWork.UserRepository.GetAll();
-            PdfReport.GeneratePDFUsers(allUsers);
+            //var allUsers = unitOfWork.UserRepository.GetAll();
+            //foreach (var item in allUsers)
+            //{
+            //    Console.WriteLine(item.UserName);
+            //}
+            //PdfReport.GeneratePDFUsers(allUsers);
 
             //var user = new User("user1", "FirstName", "LastName");
             //var destination = new Destination("Sofia");
