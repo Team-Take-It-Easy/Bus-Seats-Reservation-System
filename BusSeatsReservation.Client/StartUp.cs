@@ -150,7 +150,10 @@
             var repositoryFactory = new RepositoryFactory();
             var unitOfWork = new EfUnitOfWork(sqlDbContext, repositoryFactory);
 
-            LoadInitialData(unitOfWork);
+            //LoadInitialData(unitOfWork);
+
+            var trip = unitOfWork.TripRepository.GetByID(1);
+            PdfReport.GeneratePDFTrip(trip);
         }
 
         public static void LoadInitialData(EfUnitOfWork unitOfWork)

@@ -18,10 +18,10 @@ namespace BusSeatsReservation.Models.SQL.Models
         public int Id { get; set; }
 
         [Required]
-        public Destination FromDestination { get; set; }
+        public virtual Destination FromDestination { get; set; }
 
         [Required]
-        public Destination ToDestination { get; set; }
+        public virtual Destination ToDestination { get; set; }
 
         public DayOfWeek DayOfWeek { get; set; }
 

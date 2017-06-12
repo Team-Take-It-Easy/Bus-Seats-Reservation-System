@@ -17,8 +17,8 @@ namespace BusSeatsReservation.Models.SQLite.Models
         public int Id { get; set; }
 
         [Required]
-        public CurrentUserTrip Trip { get; set; }
+        public virtual CurrentUserTrip Trip { get; set; }
 
-        public CurrentUserSeat Seat { get; set; }
+        public virtual CurrentUserSeat Seat { get; set; }
     }
 }

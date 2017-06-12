@@ -21,10 +21,10 @@ namespace BusSeatsReservation.Models.SQL.Models
         public int Id { get; set; }
 
         [Required]
-        public Route Route { get; set; }
+        public virtual Route Route { get; set; }
 
         [Required]
-        public Bus Bus { get; set; }
+        public virtual Bus Bus { get; set; }
 
         [Required]
         [DataType(DataType.Date)]

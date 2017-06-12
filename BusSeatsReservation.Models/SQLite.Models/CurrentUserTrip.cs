@@ -17,14 +17,14 @@ namespace BusSeatsReservation.Models.SQLite.Models
         public int Id { get; set; }
 
         [Required]
-        public CurrentUserRoute Route { get; set; }
+        public virtual CurrentUserRoute Route { get; set; }
 
         [Required]
-        public CurrentUserBus Bus { get; set; }
+        public virtual CurrentUserBus Bus { get; set; }
 
         [Required]
         public DateTime Date { get; set; }
 
-        public CurrentUserReservation reservation { get; set; }
+        public virtual CurrentUserReservation reservation { get; set; }
     }
 }

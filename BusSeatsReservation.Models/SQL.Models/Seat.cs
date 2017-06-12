@@ -10,9 +10,9 @@ namespace BusSeatsReservation.Models.SQL.Models
         public int Id { get; set; }
 
         [Required]
-        public string Label { get; set; }
+        public virtual string Label { get; set; }
 
         [Required]
-        public Bus Bus { get; set; }
+        public virtual Bus Bus { get; set; }
     }
 }
