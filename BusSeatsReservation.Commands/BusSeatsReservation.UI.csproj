@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -54,6 +58,7 @@
     <Compile Include="Factories\CommandsFactory.cs" />
     <Compile Include="Readers\ConsoleReader.cs" />
     <Compile Include="Utils\CommandParser.cs" />
+    <Compile Include="Utils\DataParser.cs" />
     <Compile Include="Utils\Validator.cs" />
     <Compile Include="Writers\ConsoleWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,6 +81,10 @@
       <Project>{28061CF9-DF66-4C09-B320-620AB85D272C}</Project>
       <Name>BusSeatsReservation.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

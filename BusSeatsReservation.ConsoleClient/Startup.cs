@@ -27,13 +27,15 @@ namespace BusSeatsReservation.ConsoleClient
             var writer = new ConsoleWriter();
 
             var sqlDbContext = new SQLDbContext();
-
+            
             var repositoryFactory = new RepositoryFactory();
             var sqlUnitOfWork = new EfUnitOfWork(sqlDbContext, repositoryFactory);
             var validator = new Validator(writer, sqlUnitOfWork);
             var commandsFactory = new CommandsFactory();
             var commandParser = new CommandParser();
             var engine = new Engine(reader, writer, commandsFactory, sqlUnitOfWork, validator, commandParser);
+
+            DataParser.LoadInitialData(sqlUnitOfWork);
 
             engine.Start();
         }

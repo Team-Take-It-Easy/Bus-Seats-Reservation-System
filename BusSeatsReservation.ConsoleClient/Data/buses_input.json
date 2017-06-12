@@ -1,0 +1,559 @@
+{
+'Buses': [
+ {
+   "Type": "Standard",
+   "NumberOfSeats": 49,
+  "RegNumber": "CA1367KK",
+  'Seats': [
+ {
+   "Label": "1",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "2",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "3",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "4",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "5",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "6",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "7",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "8",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "9",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "10",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "11",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "12",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "13",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "14",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "15",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "16",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "17",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "18",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "19",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "20",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "21",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "22",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "23",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "24",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "25",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "26",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "27",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "28",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "29",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "30",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "31",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "32",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "33",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "34",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "35",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "36",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "37",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "38",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "39",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "40",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "41",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "42",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "43",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "44",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "45",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "46",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "47",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "48",
+   "Bus_Id": 1
+ },
+ {
+   "Label": "49",
+   "Bus_Id": 1
+ }
+]
+},
+  {
+    "Type": "Luxury",
+    "NumberOfSeats": 15,
+    "RegNumber": "CB1234AA",
+    'Seats': [
+      {
+        "Label": "1A",
+        "Bus_Id": 2
+      },
+      {
+        "Label": "1B",
+        "Bus_Id": 2
+      },
+      {
+        "Label": "1C",
+        "Bus_Id": 2
+      },
+      {
+        "Label": "2A",
+        "Bus_Id": 2
+      },
+      {
+        "Label": "2B",
+        "Bus_Id": 2
+      },
+      {
+        "Label": "2C",
+        "Bus_Id": 2
+      },
+      {
+        "Label": "3A",
+        "Bus_Id": 2
+      },
+      {
+        "Label": "3B",
+        "Bus_Id": 2
+      },
+      {
+        "Label": "3C",
+        "Bus_Id": 2
+      },
+      {
+        "Label": "4A",
+        "Bus_Id": 2
+      },
+      {
+        "Label": "4B",
+        "Bus_Id": 2
+      }
+    ]
+ },
+ {
+   "Type": "Standard",
+   "NumberOfSeats": 25,
+  "RegNumber": "CB5789OP",
+  'Seats': [
+ {
+   "Label": "1",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "2",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "3",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "4",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "5",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "6",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "7",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "8",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "9",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "10",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "11",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "12",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "13",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "14",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "15",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "16",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "17",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "18",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "19",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "20",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "21",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "22",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "23",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "24",
+   "Bus_Id": 3
+ },
+ {
+   "Label": "25",
+   "Bus_Id": 3
+ }
+]
+ }
+],
+'Destinations': [
+ {
+   "Name": "Sofia"
+ },
+ {
+   "Name": "Plovdiv"
+ },
+ {
+   "Name": "Varna"
+ },
+ {
+   "Name": "Burgas"
+ },
+ {
+   "Name": "Pernik"
+ },
+ {
+   "Name": "Sozopol"
+ },
+ {
+   "Name": "Goce Delchev"
+ },
+ {
+   "Name": "Veliko Tarnovo"
+ },
+ {
+   "Name": "London"
+ },
+ {
+   "Name": "Paris"
+ }
+],
+'Users': [
+ {
+   "UserName": "pesho82",
+   "FirstName": "Petar",
+   "LastName": "Petrov"
+ },
+ {
+   "UserName": "petar.petrov",
+   "FirstName": "Petar",
+   "LastName": "Petrov"
+ },
+ {
+   "UserName": "minkova88",
+   "FirstName": "Ana",
+   "LastName": "Minkova"
+ },
+ {
+   "UserName": "user68",
+   "FirstName": "Bozhidar",
+   "LastName": "Yordanov"
+ },
+ {
+   "UserName": "damdam",
+   "FirstName": "Damyana",
+   "LastName": "Tancheva"
+ },
+ {
+   "UserName": "stoyanov",
+   "FirstName": "Daniel",
+   "LastName": "Stoyanov"
+ },
+ {
+   "UserName": "dsimeonova",
+   "FirstName": "Deyana",
+   "LastName": "Simeonova"
+ },
+ {
+   "UserName": "elena23",
+   "FirstName": "Elena",
+   "LastName": "Petkova"
+ },
+ {
+   "UserName": "kkkkk",
+   "FirstName": "Gabriela",
+   "LastName": "Nikolova"
+ },
+ {
+   "UserName": "george2",
+   "FirstName": "Georgi",
+   "LastName": "Nedev"
+ },
+ {
+   "UserName": "mincheva",
+   "FirstName": "Hristina",
+   "LastName": "Mincheva"
+ },
+ {
+   "UserName": "mileva",
+   "FirstName": "Irena",
+   "LastName": "Mileva"
+ },
+ {
+   "UserName": "kris22",
+   "FirstName": "Kristian",
+   "LastName": "Markov"
+ },
+ {
+   "UserName": "kris99",
+   "FirstName": "Kristina",
+   "LastName": "Lazarova"
+ },
+ {
+   "UserName": "mihaela",
+   "FirstName": "Mihaela",
+   "LastName": "Kostadinova"
+ },
+ {
+   "UserName": "iliev",
+   "FirstName": "Milen",
+   "LastName": "Iliev"
+ },
+ {
+   "UserName": "moni77",
+   "FirstName": "Simeon",
+   "LastName": "Gochev"
+ },
+ {
+   "UserName": "vanyaD",
+   "FirstName": "Vanya",
+   "LastName": "Doncheva"
+ },
+ {
+   "UserName": "vel.dim",
+   "FirstName": "Velina",
+   "LastName": "Dimova"
+ },
+ {
+   "UserName": "victor",
+   "FirstName": "Viktor",
+   "LastName": "Anev"
+ },
+ {
+   "UserName": "ivanivan",
+   "FirstName": "Иван",
+   "LastName": "Иванов"
+ },
+ {
+   "UserName": "mariaP",
+   "FirstName": "Мария",
+   "LastName": "Петрова"
+ }
+],
+'Routes': [
+ {
+   "FromDestination": "Sofia",
+   "ToDestination": "Varna",
+   "DayOfWeek": "Monday",
+   "DepatureHour": "10:00",
+   "Price": 38,
+   "Bus_id": 1
+ },
+ {
+   "FromDestination": "Sofia",
+   "ToDestination": "Varna",
+   "DayOfWeek": "Thuesday",
+   "DepatureHour": "15:30",
+   "Price": 38,
+   "Bus_id": 1
+ },
+ {
+   "FromDestination": "Varna",
+   "ToDestination": "Burgas",
+   "DayOfWeek": "Monday",
+   "DepatureHour": "12:00",
+   "Price": 12,
+   "Bus_id": 3
+ },
+ {
+   "FromDestination": "Varna",
+   "ToDestination": "Burgas",
+   "DayOfWeek": "Friday",
+   "DepatureHour": "12:00",
+   "Price": 12,
+   "Bus_id": 3
+ },
+ {
+   "FromDestination": "Veliko Tarnovo",
+   "ToDestination": "Varna",
+   "DayOfWeek": "Sunday",
+   "DepatureHour": "13:00",
+   "Price": 25.5,
+   "Bus_id": 3
+ },
+ {
+   "FromDestination": "Sofia",
+   "ToDestination": "Paris",
+   "DayOfWeek": "Monday",
+   "DepatureHour": "18:20",
+   "Price": null,
+   "Bus_id": 2
+ }
+]
+}

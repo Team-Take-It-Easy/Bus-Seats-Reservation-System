@@ -79,11 +79,11 @@ namespace BusSeatsReservation.Reports
             paragraph.Font = FontFactory.GetFont(FontFactory.HELVETICA, 12f, BaseColor.GREEN);
 
             paragraph.Add(@"Trip ID:" + result.Id);
-            paragraph.Add(@"From:" + result.Route.FromDestination);
-            paragraph.Add(@"To:" + result.Route.ToDestination);
-            paragraph.Add(@"Date:" + result.Date);
-            paragraph.Add(@"Hour:" + result.Route.DepatureHour);
-            paragraph.Add(@"Number of passengers:" + result.Reservations.Count);
+            paragraph.Add("\n" + @"From:" + result.Route.FromDestination);
+            paragraph.Add("\n" + @"To:" + result.Route.ToDestination);
+            paragraph.Add("\n" + @"Date:" + result.Date);
+            paragraph.Add("\n" + @"Hour:" + result.Route.DepatureHour);
+            paragraph.Add("\n" + @"Number of passengers:" + result.Reservations.Count);
 
             doc.Add(paragraph);
 
