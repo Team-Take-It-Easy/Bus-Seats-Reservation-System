@@ -4,7 +4,7 @@
 
     using Contracts;
     
-    public class ConsoleWriter :IWriter
+    internal class ConsoleWriter :IWriter
     {
         public void Write(string args)
         {

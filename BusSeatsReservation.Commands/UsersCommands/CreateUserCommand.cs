@@ -1,19 +1,20 @@
 ﻿namespace BusSeatsReservation.Commands.UsersCommands
 {
     using Data.Common;
-    using Contracts;
-    using Utils;
+    using Models.SQL.Models;
 
     class CreateUserCommand
     {
-        public CreateUserCommand(IUnitOfWork unitOfWork, IWriter iLogger)
+        public CreateUserCommand(EfUnitOfWork unitOfWork)
         {
             this.UnitOfWork = unitOfWork;
-            this.ILogger = iLogger;
         }
 
-        public IUnitOfWork UnitOfWork { get; protected set; }
-        public IWriter ILogger { get; protected set; }
+        public EfUnitOfWork UnitOfWork { get; protected set; }
        
+        public void Create(User user)
+        {
+            this.UnitOfWork.UserRepository.Add(user);
+        }
     }
 }

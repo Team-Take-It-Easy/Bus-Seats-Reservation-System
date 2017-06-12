@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusSeatsReservation.Commands.BusesCommands
 {
-    class UpdateBus
+    class UpdateBusCommand
     {
     }
 }
