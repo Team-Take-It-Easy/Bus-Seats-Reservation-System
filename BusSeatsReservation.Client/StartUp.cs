@@ -22,9 +22,9 @@
     {
         public static void Main()
         {
-            var reader = new ConsoleReader();
-            string input = reader.Read();
-            Console.WriteLine(input);
+            //var reader = new ConsoleReader();
+            //string input = reader.Read();
+            //Console.WriteLine(input);
             //var sqlDbContext = new SQLDbContext();
             //var repositoryFactory = new RepositoryFactory();
 
@@ -145,6 +145,12 @@
             //Console.WriteLine("------------------------SQLite Database-------------------------------");
 
             //Console.WriteLine(sqLiteRepository.GetByID(1).Title);
+
+            var sqlDbContext = new SQLDbContext();
+            var repositoryFactory = new RepositoryFactory();
+            var unitOfWork = new EfUnitOfWork(sqlDbContext, repositoryFactory);
+
+            LoadInitialData(unitOfWork);
         }
 
         public static void LoadInitialData(EfUnitOfWork unitOfWork)
