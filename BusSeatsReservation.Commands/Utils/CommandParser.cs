@@ -9,14 +9,9 @@ using System.Threading.Tasks;
 
 namespace BusSeatsReservation.Commands.Utils
 {
-    class CommandParser
+    public class CommandParser : ICommandParser
     {
-        public CommandParser()
-        {
-
-        }
-
-        public ICommand FindCommand(string commandName, string model, IUnitOfWork unitOfWork, IValidator validator)
+        public ICommand FindCommand(string commandName, string model, IUnitOfWork unitOfWork, IValidator validator, IWriter writer)
         {
             var fullCommand = string.Concat(commandName, model, "command");
             Console.WriteLine(fullCommand);
@@ -31,7 +26,7 @@ namespace BusSeatsReservation.Commands.Utils
                 throw new ArgumentException("wrong command");
             }
 
-            var command = Activator.CreateInstance(commandTypeInfo, unitOfWork, validator) as ICommand;
+            var command = Activator.CreateInstance(commandTypeInfo, unitOfWork, validator, writer) as ICommand;
             return command;
         }
     }

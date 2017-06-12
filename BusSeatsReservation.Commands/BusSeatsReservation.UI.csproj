@@ -45,6 +45,7 @@
     <Compile Include="BusesCommands\ListBussesCommand.cs" />
     <Compile Include="BusesCommands\UpdateBusCommand.cs" />
     <Compile Include="Contracts\ICommand.cs" />
+    <Compile Include="Contracts\ICommandParser.cs" />
     <Compile Include="Contracts\ICommandsFactory.cs" />
     <Compile Include="Contracts\IReader.cs" />
     <Compile Include="Contracts\IValidator.cs" />

@@ -1,11 +1,10 @@
 ﻿namespace BusSeatsReservation.Commands
 {
-    using Contracts;
-    using Data.Common;
-    using System;
     using System.Collections.Generic;
     using System.Linq;
-    using UsersCommands;
+
+    using Contracts;
+    using Data.Common;
     using Utils;
 
     public class Engine
@@ -14,14 +13,17 @@
         private IWriter writer;
         private ICommandsFactory commandFactory;
         private EfUnitOfWork sqlUnitOfWork;
+        private IValidator validator;
+        private ICommandParser commandParser;
 
-        public Engine(IReader reader, IWriter writer, ICommandsFactory commandFactory, EfUnitOfWork sqlUnitOfWork, IValidator validator)
+        public Engine(IReader reader, IWriter writer, ICommandsFactory commandFactory, EfUnitOfWork sqlUnitOfWork, IValidator validator, ICommandParser commandParser)
         {
             this.Writer = writer;
             this.Reader = reader;
             this.CommandsFactory = commandFactory;
             this.SQLUnitOfWork = sqlUnitOfWork;
             this.Validator = validator;
+            this.CommandParser = commandParser;
         }
 
         internal IReader Reader
@@ -69,7 +71,6 @@
             {
                 return this.sqlUnitOfWork;
             }
-
             set
             {
                 this.sqlUnitOfWork = value;
@@ -77,6 +78,8 @@
         }
 
         public IValidator Validator { get; set; }
+        public ICommandParser CommandParser { get; set; }
+
         public void Start()
         {
             this.Writer.Write(Constants.AskForCommand);
@@ -106,32 +109,12 @@
 
                 List<string> parameters = input.Split(' ').ToList();
 
-                command = this.CreateCommand(commandString, model, this.SQLUnitOfWork, this.Validator);
+                command = this.CommandParser
+                        .FindCommand(commandString, model, this.SQLUnitOfWork,
+                                        this.Validator, this.Writer);
 
                 this.Writer.Write(command.Execute(parameters));
             }
-        }
-
-        private ICommand CreateCommand(string command, string model, EfUnitOfWork unitOfWork, IValidator validator)
-        {
-            //if (command.ToLower() == "create")
-            //{
-            //    switch (model.ToLower())
-            //    {
-            //        case "user":
-            //            return this.commandFactory.CreateUserCommand(unitOfWork);
-            //        default:
-            //            throw new Exception("The passed command is not valid!");
-            //    }
-            //}
-            //else
-            //{
-            //    throw new Exception("The passed command is not valid!");
-            //}
-
-            var commandParser = new CommandParser();
-            var result = commandParser.FindCommand(command, model, unitOfWork, validator);
-            return result;
         }
     }
 }

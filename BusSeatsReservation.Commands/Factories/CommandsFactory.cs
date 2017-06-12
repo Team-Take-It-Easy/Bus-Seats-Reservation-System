@@ -14,27 +14,9 @@ namespace BusSeatsReservation.Commands.Factories
     {
         private IValidator validator;
 
-        public CommandsFactory(IValidator validator)
+        public ICommand CreateUserCommand(EfUnitOfWork unitOfWork, IValidator validator, IWriter writer)
         {
-            this.Validator = validator;
-        }
-
-        internal IValidator Validator
-        {
-            get
-            {
-                return this.validator;
-            }
-
-            set
-            {
-                this.validator = value;
-            }
-        }
-
-        public ICommand CreateUserCommand(EfUnitOfWork unitOfWork)
-        {
-            return new CreateUserCommand(unitOfWork, this.Validator);
+            return new CreateUserCommand(unitOfWork, validator, writer);
         }
     }
 }

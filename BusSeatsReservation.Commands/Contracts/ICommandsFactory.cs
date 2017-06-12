@@ -1,14 +1,9 @@
-﻿using BusSeatsReservation.Data.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BusSeatsReservation.Commands.Contracts
+﻿namespace BusSeatsReservation.Commands.Contracts
 {
+    using Data.Common;
+
     public interface ICommandsFactory
     {
-        ICommand CreateUserCommand(EfUnitOfWork unitOfWork);
+        ICommand CreateUserCommand(EfUnitOfWork unitOfWork, IValidator validator, IWriter writer);
     }
 }
