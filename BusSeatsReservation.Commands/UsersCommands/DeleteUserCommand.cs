@@ -5,6 +5,7 @@
     using Contracts;
     using Data.Common;
     using Utils;
+    using Models.SQL.Models;
 
     class DeleteUserCommand : ICommand
     {
@@ -31,20 +32,20 @@
                 this.Writer.Write($"{Constants.ErrorUsernameWithInvalidLength}\n{Constants.AskForUserByUsername}");
                 userName = this.Reader.Read();
             }
-
-            var userToDelete = this.UnitOfWork.UserRepository.Search(user => user.UserName == userName).First();
-
-            if (userToDelete == null)
+            User userToDelete = null;
+            try
+            {
+                userToDelete = this.UnitOfWork.UserRepository.Search(user => user.UserName == userName).First();
+            }
+            catch
             {
                 this.Writer.Write($"{Constants.SearchedUserDoesNotExist}\n{Constants.AskForCommandShort}");
+                return;
             }
 
-            else
-            {
-                this.UnitOfWork.UserRepository.Delete(userToDelete);
-                this.Writer.Write($"User {userName} {Constants.EntityDeletedSuccessfully}!");
-                this.UnitOfWork.Commit();
-            }
+            this.UnitOfWork.UserRepository.Delete(userToDelete);
+            this.Writer.Write($"User {userName} {Constants.EntityDeletedSuccessfully}!");
+            this.UnitOfWork.Commit();
         }
     }
 }

@@ -5,6 +5,7 @@
     using Contracts;
     using Data.Common;
     using Utils;
+    using Models.SQL.Models;
 
     class UpdateUserCommand : ICommand
     {
@@ -26,34 +27,35 @@
             this.Writer.Write(Constants.AskForUserByUsername);
             var userName = this.Reader.Read();
 
-            var userToEdit = this.UnitOfWork.UserRepository.Search(user => user.UserName == userName).First();
-
-            if(userName == null)
+            User userToEdit = null;
+            try
+            {
+                userToEdit = this.UnitOfWork.UserRepository.Search(user => user.UserName == userName).First();
+            }
+            catch
             {
                 this.Writer.Write($"{Constants.SearchedUserDoesNotExist}\n{Constants.AskForCommandShort}");
+                return;
             }
-            
-            else
+
+            this.Writer.Write(Constants.AskForFirstName);
+            var firstName = this.Reader.Read();
+
+            this.Writer.Write(Constants.AskForLastName);
+            var lastName = this.Reader.Read();
+
+            while (!this.Validator.Validate(lastName, Constants.MinLastNameLength, Constants.MaxLastNameLength))
             {
+                this.Writer.Write($"{Constants.ErrorLastNameWIthInvalidLength}\n{Constants.AskForLastName}");
                 this.Writer.Write(Constants.AskForFirstName);
-                var firstName = this.Reader.Read();
-
-                this.Writer.Write(Constants.AskForLastName);
-                var lastName = this.Reader.Read();
-
-                while (!this.Validator.Validate(lastName, Constants.MinLastNameLength, Constants.MaxLastNameLength))
-                {
-                    this.Writer.Write($"{Constants.ErrorLastNameWIthInvalidLength}\n{Constants.AskForLastName}");
-                    this.Writer.Write(Constants.AskForFirstName);
-                    lastName = this.Reader.Read();
-                }
-
-                userToEdit.FirstName = firstName;
-                userToEdit.LastName = lastName;
-                this.UnitOfWork.Commit();
-
-                this.Writer.Write($"User {userName} edited!");
+                lastName = this.Reader.Read();
             }
+
+            userToEdit.FirstName = firstName;
+            userToEdit.LastName = lastName;
+            this.UnitOfWork.Commit();
+
+            this.Writer.Write($"User {userName} edited!");
         }
     }
 }

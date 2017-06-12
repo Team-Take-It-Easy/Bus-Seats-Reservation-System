@@ -53,6 +53,8 @@
     <Compile Include="Engine.cs" />
     <Compile Include="Factories\CommandsFactory.cs" />
     <Compile Include="Readers\ConsoleReader.cs" />
+    <Compile Include="ReservationsCommands\AllReservationCommand.cs" />
+    <Compile Include="ReservationsCommands\CreateReservationCommand.cs" />
     <Compile Include="UsersCommands\AllUserCommand.cs" />
     <Compile Include="Utils\CommandParser.cs" />
     <Compile Include="Utils\DataParser.cs" />
@@ -66,7 +68,6 @@
     <Compile Include="Utils\Constants.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ReservationsCommands\" />
     <Folder Include="RoutesCommands\" />
   </ItemGroup>
   <ItemGroup>

@@ -4,7 +4,7 @@
     {
         // Constant arrays
         internal static readonly string[] CommandsList = { "Create", "Update", "Delete", "All", "Exit" };
-        internal static readonly string[] ModelsList = { "User", "Reservation", "Route", "Bus", "App" };
+        internal static readonly string[] ModelsList = { "User", "Reservation", "Route", "Trip", "App" };
 
         // UI strings
         internal const string AskForCommandShort = "Please, enter command";
@@ -22,7 +22,14 @@ All reservations (returns a list of all the existing reservations of a given use
 Create route (creates new route);
 Update route (edits given route);
 Delete route (deletes given route);
-All routes (returns a list of all the routes);";
+All routes (returns a list of all the routes);
+
+Create trip (creates new trip);
+Update trip (edits given trip);
+Delete trip (deletes given trip);
+All trips (returns a list of all trips);
+
+Exit app (exits the application);";
 
         internal const string ErrorInvalidCommand = "Wrong command, please choose one of the following:\n";
         internal const string ExitMessage = "Your job here is done!";
@@ -57,6 +64,12 @@ All routes (returns a list of all the routes);";
         internal const string ErrorNoLastName = "Error! The user must have a last name!";
         internal const string ErrorLastNameWIthInvalidLength = "Error! THe user's last name must be between 2 and 30 symbols long!";
 
+        // Create reservation
+        internal const string CreateReservation = "Create reservation:";
+        internal const string FoundUser = "User found!";
+
+        internal const string AllReservations = "All reservations:";
+        //internal const string 
 
         // Reservation validations
         internal const string ErrorCreatingReservationWithNullTrip = "Error! Please enter trip for this reservation!";
