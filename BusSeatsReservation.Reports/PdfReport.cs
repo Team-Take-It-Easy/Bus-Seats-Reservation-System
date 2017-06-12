@@ -23,35 +23,15 @@ namespace BusSeatsReservation.Reports
 
             doc.Open();
 
-            //doc.Add(new Paragraph("TEST TEST TEST"));
-            //Chunk chunk = new Chunk("This is from chunk. ");
-            //doc.Add(chunk);
-
-            //Phrase phrase = new Phrase("This is from Phrase.");
-            //doc.Add(phrase);
-
-            //Paragraph para = new Paragraph("This is from paragraph.");
-            //doc.Add(para);
-
-            //string text = @"you are successfully created PDF file.";
-            Paragraph paragraph = new Paragraph();
-            paragraph.SpacingBefore = 10;
-            paragraph.SpacingAfter = 10;
-            paragraph.Alignment = Element.ALIGN_LEFT;
-            paragraph.Font = FontFactory.GetFont(FontFactory.HELVETICA, 12f, BaseColor.GREEN);
-            //paragraph.Add(text);
-            doc.Add(paragraph);
-
             //Image image = Image.GetInstance("Image.jpeg");
             //doc.Add(image);
-
         }
 
         public static void GeneratePDFUsers(IEnumerable<User> result)
         {
             Document doc = new Document(PageSize.A4, 10, 10, 5, 5);
 
-            GeneratePDFInfo("usersPdf", doc);
+            GeneratePDFInfo("UsersPdf", doc);
 
             PdfPTable table = new PdfPTable(2);
 
@@ -65,7 +45,7 @@ namespace BusSeatsReservation.Reports
             col1.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
             col2.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
 
-            headerCell.BackgroundColor = BaseColor.YELLOW;
+            headerCell.BackgroundColor = BaseColor.CYAN;
             col1.BackgroundColor = BaseColor.LIGHT_GRAY;
             col2.BackgroundColor = BaseColor.LIGHT_GRAY;
 
@@ -77,6 +57,61 @@ namespace BusSeatsReservation.Reports
             {
                 table.AddCell(item.FirstName);
                 table.AddCell(item.LastName);
+            }
+
+            doc.Add(table);
+
+            doc.Close();
+        }
+
+        public static void GeneratePDFTrip(Trip result)
+        {
+            Document doc = new Document(PageSize.A4, 10, 10, 5, 5);
+
+            string fileName = "Trip" + result.Id;
+
+            GeneratePDFInfo(fileName, doc);
+
+            Paragraph paragraph = new Paragraph();
+            paragraph.SpacingBefore = 10;
+            paragraph.SpacingAfter = 10;
+            paragraph.Alignment = Element.ALIGN_LEFT;
+            paragraph.Font = FontFactory.GetFont(FontFactory.HELVETICA, 12f, BaseColor.GREEN);
+
+            paragraph.Add(@"Trip ID:" + result.Id);
+            paragraph.Add(@"From:" + result.Route.FromDestination);
+            paragraph.Add(@"To:" + result.Route.ToDestination);
+            paragraph.Add(@"Date:" + result.Date);
+            paragraph.Add(@"Hour:" + result.Route.DepatureHour);
+            paragraph.Add(@"Number of passengers:" + result.Reservations.Count);
+
+            doc.Add(paragraph);
+
+            PdfPTable table = new PdfPTable(3);
+
+            PdfPCell col1 = new PdfPCell(new Phrase("First Name"));
+            PdfPCell col2 = new PdfPCell(new Phrase("Last Name"));
+            PdfPCell col3 = new PdfPCell(new Phrase("Seat Number"));
+
+            col1.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+            col2.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+            col3.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+
+            col1.BackgroundColor = BaseColor.LIGHT_GRAY;
+            col2.BackgroundColor = BaseColor.LIGHT_GRAY;
+            col3.BackgroundColor = BaseColor.LIGHT_GRAY;
+
+            table.AddCell(col1);
+            table.AddCell(col2);
+            table.AddCell(col3);
+
+            var reservations = result.Reservations.ToArray();
+
+            foreach (var item in reservations)
+            {
+                table.AddCell(item.User.FirstName);
+                table.AddCell(item.User.FirstName);
+                table.AddCell(item.Seat.Label);
             }
 
             doc.Add(table);
