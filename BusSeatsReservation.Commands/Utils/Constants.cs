@@ -29,6 +29,7 @@ Edit route (edits given route);
 Delete route (deletes given route);
 Get all routes (returns a list of all the routes);";
 
+        internal const string CreateUser = "Create user:";
         internal const string AskForUserName = "Please, enter username:";
 
         // User validations

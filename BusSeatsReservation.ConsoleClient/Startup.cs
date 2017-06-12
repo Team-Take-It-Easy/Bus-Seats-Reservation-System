@@ -32,7 +32,7 @@ namespace BusSeatsReservation.ConsoleClient
             var sqlUnitOfWork = new EfUnitOfWork(sqlDbContext, repositoryFactory);
             var validator = new Validator(writer, sqlUnitOfWork);
             var commandsFactory = new CommandsFactory(validator);
-            var engine = new Engine(reader, writer, commandsFactory, sqlUnitOfWork);
+            var engine = new Engine(reader, writer, commandsFactory, sqlUnitOfWork, validator);
 
             engine.Start();
         }

@@ -4,6 +4,7 @@
     using Data.Common;
     using Models.SQL.Models;
     using System.Collections.Generic;
+    using Utils;
 
     internal class CreateUserCommand : ICommand
     {
@@ -18,7 +19,7 @@
 
         public string Execute(IList<string> parameters)
         {
-            return "Create User Command";
+            return $"{Constants.CreateUser}\n{Constants.AskForUserName}";
         }
 
         public void Create(User user)

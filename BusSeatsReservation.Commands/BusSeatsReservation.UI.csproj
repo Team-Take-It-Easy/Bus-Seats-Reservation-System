@@ -52,6 +52,7 @@
     <Compile Include="Engine.cs" />
     <Compile Include="Factories\CommandsFactory.cs" />
     <Compile Include="Readers\ConsoleReader.cs" />
+    <Compile Include="Utils\CommandParser.cs" />
     <Compile Include="Utils\Validator.cs" />
     <Compile Include="Writers\ConsoleWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

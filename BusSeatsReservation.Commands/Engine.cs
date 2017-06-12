@@ -5,6 +5,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using UsersCommands;
     using Utils;
 
     public class Engine
@@ -14,12 +15,13 @@
         private ICommandsFactory commandFactory;
         private EfUnitOfWork sqlUnitOfWork;
 
-        public Engine(IReader reader, IWriter writer, ICommandsFactory commandFactory, EfUnitOfWork sqlUnitOfWork)
+        public Engine(IReader reader, IWriter writer, ICommandsFactory commandFactory, EfUnitOfWork sqlUnitOfWork, IValidator validator)
         {
             this.Writer = writer;
             this.Reader = reader;
             this.CommandsFactory = commandFactory;
             this.SQLUnitOfWork = sqlUnitOfWork;
+            this.Validator = validator;
         }
 
         internal IReader Reader
@@ -74,6 +76,7 @@
             }
         }
 
+        public IValidator Validator { get; set; }
         public void Start()
         {
             this.Writer.Write(Constants.AskForCommand);
@@ -103,31 +106,32 @@
 
                 List<string> parameters = input.Split(' ').ToList();
 
-                command = this.CreateCommand(commandString, model, this.sqlUnitOfWork);
+                command = this.CreateCommand(commandString, model, this.SQLUnitOfWork, this.Validator);
 
                 this.Writer.Write(command.Execute(parameters));
             }
-
-
-
         }
 
-        private ICommand CreateCommand(string command, string model, EfUnitOfWork unitOfWork)
+        private ICommand CreateCommand(string command, string model, EfUnitOfWork unitOfWork, IValidator validator)
         {
-            if (command.ToLower() == "create")
-            {
-                switch (model.ToLower())
-                {
-                    case "user":
-                        return this.commandFactory.CreateUserCommand(unitOfWork);
-                    default:
-                        throw new Exception("The passed command is not valid!");
-                }
-            }
-            else
-            {
-                throw new Exception("The passed command is not valid!");
-            }
+            //if (command.ToLower() == "create")
+            //{
+            //    switch (model.ToLower())
+            //    {
+            //        case "user":
+            //            return this.commandFactory.CreateUserCommand(unitOfWork);
+            //        default:
+            //            throw new Exception("The passed command is not valid!");
+            //    }
+            //}
+            //else
+            //{
+            //    throw new Exception("The passed command is not valid!");
+            //}
+
+            var commandParser = new CommandParser();
+            var result = commandParser.FindCommand(command, model, unitOfWork, validator);
+            return result;
         }
     }
 }
