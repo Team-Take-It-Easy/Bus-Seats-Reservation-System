@@ -47,6 +47,7 @@
             }
 
             this.NewUser = new User(userName, firstName, lastName);
+            this.UnitOfWork.UserRepository.Add(NewUser);
             this.Writer.Write(Constants.UserCreated);
         }
     }
