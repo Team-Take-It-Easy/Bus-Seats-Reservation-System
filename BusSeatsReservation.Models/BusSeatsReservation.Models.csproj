@@ -94,7 +94,12 @@
     <Compile Include="SQL.Models\Seat.cs" />
     <Compile Include="SQL.Models\Trip.cs" />
     <Compile Include="SQL.Models\User.cs" />
-    <Compile Include="SQLite.Models\Report.cs" />
+    <Compile Include="SQLite.Models\CurrentUserBus.cs" />
+    <Compile Include="SQLite.Models\CurrentUserDestination.cs" />
+    <Compile Include="SQLite.Models\CurrentUserReservation.cs" />
+    <Compile Include="SQLite.Models\CurrentUserRoute.cs" />
+    <Compile Include="SQLite.Models\CurrentUserSeat.cs" />
+    <Compile Include="SQLite.Models\CurrentUserTrip.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

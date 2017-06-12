@@ -17,7 +17,17 @@ namespace BusSeatsReservation.Data.SQLite
         {
         }
 
-        public DbSet<Report> Reports { get; set; }
+        public DbSet<CurrentUserBus> CurrentUserBuses { get; set; }
+
+        public DbSet<CurrentUserDestination> CurrentUserDestinations { get; set; }
+
+        public DbSet<CurrentUserReservation> ReservationsCurrentUserReservations { get; set; }
+
+        public DbSet<CurrentUserRoute> CurrentUserRoutes { get; set; }
+
+        public DbSet<CurrentUserSeat> CurrentUserSeats { get; set; }
+
+        public DbSet<CurrentUserTrip> CurrentUserTrips { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
