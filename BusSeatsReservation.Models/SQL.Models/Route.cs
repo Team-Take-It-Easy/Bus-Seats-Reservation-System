@@ -12,7 +12,6 @@ namespace BusSeatsReservation.Models.SQL.Models
         public Route()
         {
             this.Buses = new HashSet<Bus>();
-
         }
 
         [Key]
@@ -24,8 +23,9 @@ namespace BusSeatsReservation.Models.SQL.Models
         [Required]
         public Destination ToDestination { get; set; }
 
-        public DateTime DayOfWeek { get; set; }
+        public DayOfWeek DayOfWeek { get; set; }
 
+        [DataType(DataType.Time)]
         public DateTime DepatureHour { get; set; }
 
         public decimal? Price { get; set; }
@@ -42,6 +42,5 @@ namespace BusSeatsReservation.Models.SQL.Models
                 this.buses = value;
             }
         }
-
     }
 }

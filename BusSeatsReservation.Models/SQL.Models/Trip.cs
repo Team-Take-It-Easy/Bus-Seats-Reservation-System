@@ -10,9 +10,12 @@ namespace BusSeatsReservation.Models.SQL.Models
 {
     public class Trip
     {
-        public Trip() { }
-
         private ICollection<Reservation> reservations;
+
+        public Trip()
+        {
+            this.Reservations = new HashSet<Reservation>();
+        }
 
         [Key]
         public int Id { get; set; }
@@ -24,6 +27,7 @@ namespace BusSeatsReservation.Models.SQL.Models
         public Bus Bus { get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 
         public virtual ICollection<Reservation> Reservations
