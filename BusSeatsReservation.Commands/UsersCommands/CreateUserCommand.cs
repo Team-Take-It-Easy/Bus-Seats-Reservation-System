@@ -3,8 +3,9 @@
     using Contracts;
     using Data.Common;
     using Models.SQL.Models;
+    using System.Collections.Generic;
 
-    class CreateUserCommand
+    internal class CreateUserCommand : ICommand
     {
         public CreateUserCommand(EfUnitOfWork unitOfWork, IValidator validator)
         {
@@ -14,6 +15,11 @@
 
         public EfUnitOfWork UnitOfWork { get; protected set; }
         public IValidator Validator { get; protected set; }
+
+        public string Execute(IList<string> parameters)
+        {
+            return "Create User Command";
+        }
 
         public void Create(User user)
         {

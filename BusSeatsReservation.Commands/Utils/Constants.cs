@@ -72,5 +72,6 @@ Get all routes (returns a list of all the routes);";
         internal const string ErrorUsernameWithInvalidLength = "Error! The username length must be between 5 and 30 symbols long!";
         internal const string ErrorNoLastName = "Error! The user must have a last name!";
         internal const string ErrorLastNameWIthInvalidLength = "Error! THe user's last name must be between 2 and 30 symbols long!";
+        internal const string ErrorStringCannotBeNull = "Error! ";
     }
 }

@@ -8,19 +8,34 @@ using BusSeatsReservation.Data.Common.Factories;
 using BusSeatsReservation.Data.Common.UnitsOfWork;
 using BusSeatsReservation.Data.SQLite;
 using BusSeatsReservation.Models.SQLite.Models;
+
+using BusSeatsReservation.Commands;
+using BusSeatsReservation.Commands.Readers;
+using BusSeatsReservation.Commands.Writers;
+using BusSeatsReservation.Commands.Factories;
+using BusSeatsReservation.Data;
+using BusSeatsReservation.Data.Common;
+using BusSeatsReservation.Commands.Utils;
+
 namespace BusSeatsReservation.ConsoleClient
 {
     public class Startup
     {
         public static void Main()
         {
-            var sqlLiteDbContext = new SQLiteDbContext();
+            var reader = new ConsoleReader();
+            var writer = new ConsoleWriter();
+
+            var sqlDbContext = new SQLDbContext();
+
             var repositoryFactory = new RepositoryFactory();
-            var sqlLiteUnitOfWork = new SQLiteUnitOfWork(sqlLiteDbContext, repositoryFactory);
+            var sqlUnitOfWork = new EfUnitOfWork(sqlDbContext, repositoryFactory);
+            var validator = new Validator(writer, sqlUnitOfWork);
+            var commandsFactory = new CommandsFactory(validator);
+            var engine = new Engine(reader, writer, commandsFactory, sqlUnitOfWork);
 
-            sqlLiteUnitOfWork.DestinationRepository.Add(new CurrentUserDestination("Sofia"));
-
-            sqlLiteUnitOfWork.Commit();
+            engine.Start();
         }
     }
 }
+

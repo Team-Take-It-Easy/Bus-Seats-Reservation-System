@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusSeatsReservation.Commands.Contracts
 {
-    interface IWriter
+    public interface IWriter
     {
         void Write(string args);
     }

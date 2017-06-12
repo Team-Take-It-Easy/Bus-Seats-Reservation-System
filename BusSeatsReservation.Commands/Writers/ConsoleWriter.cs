@@ -1,10 +1,10 @@
-﻿namespace BusSeatsReservation.Commands.Loggers
+﻿namespace BusSeatsReservation.Commands.Writers
 {
     using System;
 
     using Contracts;
     
-    internal class ConsoleWriter :IWriter
+    public class ConsoleWriter :IWriter
     {
         public void Write(string args)
         {

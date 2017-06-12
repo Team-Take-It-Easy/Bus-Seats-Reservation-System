@@ -1,6 +1,6 @@
 ﻿namespace BusSeatsReservation.Commands.Contracts
 {
-    interface IReader
+    public interface IReader
     {
         string Read();
     }

@@ -9,7 +9,7 @@
     using System.Linq;
     using System.Linq.Expressions;
 
-    internal class Validator : IValidator
+    public class Validator : IValidator
     {
         public Validator(IWriter writer, EfUnitOfWork unitOfWork)
         {

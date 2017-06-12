@@ -50,6 +50,7 @@
     <Compile Include="Contracts\IValidator.cs" />
     <Compile Include="Contracts\IWriter.cs" />
     <Compile Include="Engine.cs" />
+    <Compile Include="Factories\CommandsFactory.cs" />
     <Compile Include="Readers\ConsoleReader.cs" />
     <Compile Include="Utils\Validator.cs" />
     <Compile Include="Writers\ConsoleWriter.cs" />

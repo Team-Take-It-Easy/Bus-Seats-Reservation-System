@@ -3,7 +3,7 @@ using BusSeatsReservation.Models.SQL.Models;
 
 namespace BusSeatsReservation.Commands.Contracts
 {
-    interface IValidator
+    public interface IValidator
     {
         bool Validate(Bus bus);
         bool Validate(Destination destination);
