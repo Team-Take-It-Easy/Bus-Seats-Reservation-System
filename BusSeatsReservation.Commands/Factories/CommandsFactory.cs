@@ -12,11 +12,9 @@ namespace BusSeatsReservation.Commands.Factories
 {
     public class CommandsFactory : ICommandsFactory
     {
-        private IValidator validator;
-
-        public ICommand CreateUserCommand(EfUnitOfWork unitOfWork, IValidator validator, IWriter writer)
+        public ICommand CreateUserCommand(EfUnitOfWork unitOfWork, IValidator validator, IWriter writer, IReader reader)
         {
-            return new CreateUserCommand(unitOfWork, validator, writer);
+            return new CreateUserCommand(unitOfWork, validator, writer, reader);
         }
     }
 }

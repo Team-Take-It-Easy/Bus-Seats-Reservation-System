@@ -2,8 +2,8 @@
 {
     using Data.Common;
 
-    interface ICommandParser
+    public interface ICommandParser
     {
-        ICommand FindCommand(string commandName, string model, IUnitOfWork unitOfWork, IValidator validator, IWriter writer);
+        ICommand FindCommand(string commandName, string model, IUnitOfWork unitOfWork, IValidator validator, IWriter writer, IReader reader);
     }
 }

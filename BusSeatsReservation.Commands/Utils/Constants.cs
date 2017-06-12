@@ -29,12 +29,31 @@ Edit route (edits given route);
 Delete route (deletes given route);
 Get all routes (returns a list of all the routes);";
 
+        internal const string ErrorInvalidCommand = "Wrong command, please choose one of the following:\n";
+
+        // Create user
         internal const string CreateUser = "Create user:";
         internal const string AskForUserName = "Please, enter username:";
+        internal const string AskForFirstName = "Please, enter first name";
+        internal const string AskForLastName = "Please, enter last name";
+        internal const string UserCreated = "User created successfully!";
 
         // User validations
         internal const string SuccessfullyCreatedUser = " successfully created!";
         internal const string SuccessfullyCreateReservation = "Reservation successfully created";
+
+        internal const int MinUserNameLength = 5;
+        internal const int MaxUserNameLength = 30;
+
+        internal const int MinLastNameLength = 2;
+        internal const int MaxLastNameLength = 30;
+
+        internal const string ErrorUserAlreadyExists = "Error! User with this username already exists! Please choose another username!";
+        internal const string ErrorNoUsername = "Error! The user must have a username!";
+        internal const string ErrorUsernameWithInvalidLength = "Error! The username length must be between 5 and 30 symbols long!";
+        internal const string ErrorNoLastName = "Error! The user must have a last name!";
+        internal const string ErrorLastNameWIthInvalidLength = "Error! THe user's last name must be between 2 and 30 symbols long!";
+
 
         // Reservation validations
         internal const string ErrorCreatingReservationWithNullTrip = "Error! Please enter trip for this reservation!";
@@ -60,19 +79,6 @@ Get all routes (returns a list of all the routes);";
         internal const string ErrorNoTripBus = "Error! The trip must have a bus!";
         internal const string ErrorNoTripRoute = "Error! The trip must have a route!";
         internal const string ErrorNoTripDate = "Error! THe trip must have a date!";
-
-        // User validation
-        internal const int MinUserNameLength = 5;
-        internal const int MaxUserNameLength = 30;
-
-        internal const int MinLastNameLength = 2;
-        internal const int MaxLastNameLength = 30;
-
-        internal const string ErrorUserAlreadyExists = "Error! User with this username already exists! Please choose another username!";
-        internal const string ErrorNoUsername = "Error! The user must have a username!";
-        internal const string ErrorUsernameWithInvalidLength = "Error! The username length must be between 5 and 30 symbols long!";
-        internal const string ErrorNoLastName = "Error! The user must have a last name!";
-        internal const string ErrorLastNameWIthInvalidLength = "Error! THe user's last name must be between 2 and 30 symbols long!";
 
         // Generic messages
         internal const string ErrorStringCannotBeNull = "Error! This value cannot be null!";

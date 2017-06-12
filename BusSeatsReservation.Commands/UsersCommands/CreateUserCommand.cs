@@ -9,30 +9,45 @@
 
     internal class CreateUserCommand : ICommand
     {
-        public CreateUserCommand(EfUnitOfWork unitOfWork, IValidator validator, IWriter writer)
+        public CreateUserCommand(EfUnitOfWork unitOfWork, IValidator validator, IWriter writer, IReader reader)
         {
             this.UnitOfWork = unitOfWork;
-            this.Validator = Validator;
+            this.Validator = validator;
+            this.Writer = writer;
+            this.Reader = reader;
         }
 
         public EfUnitOfWork UnitOfWork { get; protected set; }
         public IValidator Validator { get; protected set; }
+        public IWriter Writer { get; set; }
+        public IReader Reader { get; set; }
 
-        public void Execute(IList<string> parameters)
-        {
-            var a = $"{Constants.CreateUser}\n{Constants.AskForUserName}";
-            
-        }
+        public User NewUser { get; set; }
 
-        public void Create(User user)
+        public void Execute()
         {
-            this.Validator.Validate(user);
-            this.UnitOfWork.UserRepository.Add(user);
-        }
+            this.Writer.Write($"{Constants.CreateUser}\n{Constants.AskForUserName}");
+            var userName = this.Reader.Read();
+            while(!this.Validator.Validate(userName, Constants.MinUserNameLength, Constants.MaxUserNameLength))
+            {
+                this.Writer.Write($"{Constants.ErrorUsernameWithInvalidLength}\n{Constants.AskForUserName}");
+                userName = this.Reader.Read();
+            }
 
-        string ICommand.Execute(IList<string> parameters)
-        {
-            return "Done";
+            this.Writer.Write(Constants.AskForFirstName);
+            var firstName = Reader.Read();
+
+            this.Writer.Write(Constants.AskForLastName);
+            var lastName = this.Reader.Read();
+            while (!this.Validator.Validate(lastName, Constants.MinLastNameLength, Constants.MaxLastNameLength))
+            {
+                this.Writer.Write($"{Constants.ErrorLastNameWIthInvalidLength}\n{Constants.AskForLastName}");
+                this.Writer.Write(Constants.AskForFirstName);
+                lastName = this.Reader.Read();
+            }
+
+            this.NewUser = new User(userName, firstName, lastName);
+            this.Writer.Write(Constants.UserCreated);
         }
     }
 }

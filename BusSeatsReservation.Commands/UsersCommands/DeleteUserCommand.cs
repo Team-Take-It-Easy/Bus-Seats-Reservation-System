@@ -9,7 +9,7 @@ namespace BusSeatsReservation.Commands.UsersCommands
 {
     class DeleteUserCommand : ICommand
     {
-        public string Execute(IList<string> parameters)
+        public void Execute()
         {
             throw new NotImplementedException();
         }

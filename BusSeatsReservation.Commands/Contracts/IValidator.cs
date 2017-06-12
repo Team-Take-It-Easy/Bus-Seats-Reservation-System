@@ -12,5 +12,7 @@ namespace BusSeatsReservation.Commands.Contracts
         bool Validate(Seat seat);
         bool Validate(Trip trip);
         bool Validate(User user);
+        bool Validate(string value, int minLength, int maxLength, string message = "");
+        bool Validate(int value, int min, int max, string message);
     }
 }

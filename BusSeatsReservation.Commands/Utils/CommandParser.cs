@@ -11,10 +11,10 @@ namespace BusSeatsReservation.Commands.Utils
 {
     public class CommandParser : ICommandParser
     {
-        public ICommand FindCommand(string commandName, string model, IUnitOfWork unitOfWork, IValidator validator, IWriter writer)
+        public ICommand FindCommand(string commandName, string model, IUnitOfWork unitOfWork, IValidator validator, IWriter writer, IReader reader)
         {
             var fullCommand = string.Concat(commandName, model, "command");
-            Console.WriteLine(fullCommand);
+
             var currentAssembly = this.GetType().GetTypeInfo().Assembly;
             var commandTypeInfo = currentAssembly.DefinedTypes
                 .Where(type => type.ImplementedInterfaces.Any(inter => inter == typeof(ICommand)))
@@ -23,10 +23,10 @@ namespace BusSeatsReservation.Commands.Utils
 
             if(commandTypeInfo == null)
             {
-                throw new ArgumentException("wrong command");
+                throw new ArgumentException($"{Constants.ErrorInvalidCommand}{Constants.AskForCommand}");
             }
 
-            var command = Activator.CreateInstance(commandTypeInfo, unitOfWork, validator, writer) as ICommand;
+            var command = Activator.CreateInstance(commandTypeInfo, unitOfWork, validator, writer, reader) as ICommand;
             return command;
         }
     }
