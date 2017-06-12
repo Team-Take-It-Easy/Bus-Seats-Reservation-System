@@ -1,8 +1,16 @@
-﻿namespace BusSeatsReservation.Commands.Contracts
+﻿using BusSeatsReservation.Data.Common;
+using BusSeatsReservation.Models.SQL.Models;
+
+namespace BusSeatsReservation.Commands.Contracts
 {
     interface IValidator
     {
-        bool ValidateString();
-        bool ValidateInteger();
+        bool Validate(Bus bus);
+        bool Validate(Destination destination);
+        bool Validate(Reservation reservation);
+        bool Validate(Route route);
+        bool Validate(Seat seat);
+        bool Validate(Trip trip);
+        bool Validate(User user);
     }
 }
