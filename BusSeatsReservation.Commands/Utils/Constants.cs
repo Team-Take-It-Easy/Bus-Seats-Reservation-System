@@ -73,6 +73,7 @@ Exit app (exits the application);";
         // User validations
         internal const string SuccessfullyCreatedUser = " successfully created!";
         internal const string SuccessfullyCreateReservation = "Reservation successfully created";
+        internal const string SuccessfulSignedIn = "You are now signed in";
 
         internal const int MinUserNameLength = 5;
         internal const int MaxUserNameLength = 30;

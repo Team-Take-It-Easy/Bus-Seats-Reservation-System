@@ -12,6 +12,7 @@ namespace BusSeatsReservation.Data.Common.UnitsOfWork
 
         private SQLRepository<Creator> creatorsRepository;
         private SQLRepository<Report> reportsRepository;
+        private SQLRepository<Log> logsRepository;
 
         public PostgreSQLUnitOfWork(DbContext context, IRepositoryFactory repositoryFactory)
         {
@@ -40,6 +41,18 @@ namespace BusSeatsReservation.Data.Common.UnitsOfWork
                     this.reportsRepository = repositoryFactory.CreateRepository<Report>(context);
                 }
                 return this.reportsRepository;
+            }
+        }
+
+        public SQLRepository<Log> LogsRepository
+        {
+            get
+            {
+                if (this.logsRepository == null)
+                {
+                    this.logsRepository = repositoryFactory.CreateRepository<Log>(context);
+                }
+                return this.logsRepository;
             }
         }
 

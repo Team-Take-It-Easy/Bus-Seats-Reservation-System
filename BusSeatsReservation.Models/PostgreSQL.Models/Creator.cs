@@ -11,10 +11,12 @@ namespace BusSeatsReservation.Models.PostgreSQL.Models
     public class Creator
     {
         private ICollection<Report> reports;
+        private ICollection<Log> logs;
 
         public Creator()
         {
             this.reports = new HashSet<Report>();
+            this.logs = new HashSet<Log>();
         }
 
         [Key]
@@ -24,6 +26,30 @@ namespace BusSeatsReservation.Models.PostgreSQL.Models
         [Index(IsUnique = true)]
         public string Username { get; set; }
 
-        public virtual ICollection<Report> Reports { get; set; }
+        public virtual ICollection<Report> Reports
+        {
+            get
+            {
+                return this.reports;
+            }
+
+            set
+            {
+                this.reports = value;
+            }
+        }
+
+        public virtual ICollection<Log> Logs
+        {
+            get
+            {
+                return this.logs;
+            }
+
+            set
+            {
+                this.logs = value;
+            }
+        }
     }
 }

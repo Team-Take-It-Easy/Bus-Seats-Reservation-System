@@ -20,5 +20,7 @@ namespace BusSeatsReservation.Data.PostgreSQL
         public DbSet<Creator> Creators { get; set; }
 
         public DbSet<Report> Reports { get; set; }
+
+        public DbSet<Log> Logs { get; set; }
     }
 }

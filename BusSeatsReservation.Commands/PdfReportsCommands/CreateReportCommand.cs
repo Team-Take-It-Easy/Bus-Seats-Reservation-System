@@ -42,7 +42,7 @@ namespace BusSeatsReservation.Commands.PdfReportsCommands
             
             else if(type.ToLower() == "trip")
             {
-                this.Writer.Write($"{Constants.AskForTripId}\n");
+                this.Writer.Write(Constants.AskForTripId);
                 int tripId = int.Parse(this.Reader.Read());
 
                 while(this.UnitOfWork.TripRepository.GetByID(tripId) == null)
