@@ -24,7 +24,5 @@ namespace BusSeatsReservation.Models.SQLite.Models
 
         [Required]
         public DateTime Date { get; set; }
-
-        public virtual CurrentUserReservation reservation { get; set; }
     }
 }

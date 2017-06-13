@@ -9,7 +9,7 @@ using BusSeatsReservation.Models.PostgreSQL.Models;
 
 namespace BusSeatsReservation.Data.PostgreSQL
 {
-    public class PostgreSQLDbContext: DbContext
+    public class PostgreSQLDbContext : DbContext
     {
 
         public PostgreSQLDbContext()
@@ -17,8 +17,8 @@ namespace BusSeatsReservation.Data.PostgreSQL
         {
         }
 
-        public DbSet<BusPG> Buses{ get; set; }
+        public DbSet<Creator> Creators { get; set; }
 
-        public DbSet<BusTypePG> BusTypes { get; set; }
+        public DbSet<Report> Reports { get; set; }
     }
 }

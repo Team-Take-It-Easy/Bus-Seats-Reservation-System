@@ -22,8 +22,9 @@ namespace BusSeatsReservation.Models.SQLite.Models
         [Required]
         public virtual CurrentUserDestination ToDestination { get; set; }
 
-        public DateTime DayOfWeek { get; set; }
+        public DayOfWeek DayOfWeek { get; set; }
 
+        [DataType(DataType.Time)]
         public DateTime DepatureHour { get; set; }
 
         public decimal? Price { get; set; }

@@ -84,9 +84,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\BusType.cs" />
-    <Compile Include="PostgreSQL.Models\BusTypePG.cs" />
+    <Compile Include="PostgreSQL.Models\Creator.cs" />
+    <Compile Include="PostgreSQL.Models\Report.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PostgreSQL.Models\BusPG.cs" />
     <Compile Include="SQL.Models\Bus.cs" />
     <Compile Include="SQL.Models\Destination.cs" />
     <Compile Include="SQL.Models\Reservation.cs" />
