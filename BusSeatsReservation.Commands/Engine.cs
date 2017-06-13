@@ -146,14 +146,14 @@
         private void AddUserLog(int currentUserId)
         {
             string username = this.SQLUnitOfWork.UserRepository.GetByID(currentUserId).UserName;
-            Creator creator = this.PostgreSQLUnitOfWork.CreatorsRepository.Search(u => u.Username == username).ToArray()[0];
+            var creators = this.PostgreSQLUnitOfWork.CreatorsRepository.Search(u => u.Username == username);
+            Creator creator = null;
 
             var log = new Log()
             {
                 fromDate = DateTime.Now
             };
-
-            if (creator == null)
+            if (creators.Count() <= 0)
             {
                 creator = new Creator()
                 {
@@ -167,6 +167,7 @@
             }
             else
             {
+                creator = creators.Last();
                 creator.Logs.Add(log);
                 this.PostgreSQLUnitOfWork.LogsRepository.Add(log);
                 this.PostgreSQLUnitOfWork.CreatorsRepository.Update(creator);
@@ -177,7 +178,7 @@
         private void UpdateUserLog(int currentUserId)
         {
             string username = this.SQLUnitOfWork.UserRepository.GetByID(currentUserId).UserName;
-            Creator creator = this.PostgreSQLUnitOfWork.CreatorsRepository.Search(u => u.Username == username).ToArray()[0];
+            Creator creator = this.PostgreSQLUnitOfWork.CreatorsRepository.Search(u => u.Username == username).Last();
             var log = creator.Logs.Last();
             log.toDate = DateTime.Now;
             this.PostgreSQLUnitOfWork.LogsRepository.Update(log);
@@ -187,14 +188,15 @@
         private void AddReportToPostgreSQLDb(int currentUserId)
         {
             string username = this.SQLUnitOfWork.UserRepository.GetByID(currentUserId).UserName;
-            Creator creator = this.PostgreSQLUnitOfWork.CreatorsRepository.Search(u => u.Username == username).ToArray()[0];
+            var creators = this.PostgreSQLUnitOfWork.CreatorsRepository.Search(u => u.Username == username);
+            Creator creator = null;
 
             var report = new Report()
             {
                 Date = DateTime.Now
             };
 
-            if (creator == null)
+            if (creators.Count() <= 0)
             {
                 creator = new Creator()
                 {
@@ -207,6 +209,7 @@
             }
             else
             {
+                creator = creators.Last();
                 creator.Reports.Add(report);
                 this.PostgreSQLUnitOfWork.ReportsRepository.Add(report);
                 this.PostgreSQLUnitOfWork.CreatorsRepository.Update(creator);
