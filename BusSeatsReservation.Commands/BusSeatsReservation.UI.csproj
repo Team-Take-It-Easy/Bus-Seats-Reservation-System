@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\ICacheLoader.cs" />
     <Compile Include="Contracts\ICommand.cs" />
     <Compile Include="Contracts\ICommandParser.cs" />
     <Compile Include="Contracts\ICommandsFactory.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="RoutesCommands\CreateRouteCommand.cs" />
     <Compile Include="TripCommands\CreateTripCommand.cs" />
     <Compile Include="UsersCommands\AllUserCommand.cs" />
+    <Compile Include="Utils\CacheLoader.cs" />
     <Compile Include="Utils\CommandParser.cs" />
     <Compile Include="Utils\DataParser.cs" />
     <Compile Include="Utils\ExitAppCommand.cs" />

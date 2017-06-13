@@ -16,6 +16,7 @@ using BusSeatsReservation.Commands.Factories;
 using BusSeatsReservation.Data;
 using BusSeatsReservation.Data.Common;
 using BusSeatsReservation.Commands.Utils;
+using BusSeatsReservation.Data.PostgreSQL;
 
 namespace BusSeatsReservation.ConsoleClient
 {
@@ -27,13 +28,21 @@ namespace BusSeatsReservation.ConsoleClient
             var writer = new ConsoleWriter();
 
             var sqlDbContext = new SQLDbContext();
-            
+            var sqliteDbContext = new SQLiteDbContext();
+            var postgreSQLContext = new PostgreSQLDbContext();
+
             var repositoryFactory = new RepositoryFactory();
+
             var sqlUnitOfWork = new EfUnitOfWork(sqlDbContext, repositoryFactory);
+            var sqliteUnitOfWork = new SQLiteUnitOfWork(sqliteDbContext, repositoryFactory);
+            var postgreUnitOfWork = new PostgreSQLUnitOfWork(postgreSQLContext, repositoryFactory);
+
             var validator = new Validator(writer, sqlUnitOfWork);
             var commandsFactory = new CommandsFactory();
             var commandParser = new CommandParser();
-            var engine = new Engine(reader, writer, commandsFactory, sqlUnitOfWork, validator, commandParser);
+            var cacheLoader = new CacheLoader();
+
+            var engine = new Engine(reader, writer, commandsFactory, sqlUnitOfWork, sqliteUnitOfWork, postgreUnitOfWork, validator, commandParser, cacheLoader);
 
             //DataParser.LoadInitialData(sqlUnitOfWork);
 
