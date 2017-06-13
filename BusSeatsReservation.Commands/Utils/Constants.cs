@@ -49,7 +49,6 @@ Exit app (exits the application);";
         internal const string AllUsers = "All users:";
 
         // Create route
-
         internal const string CreateRoute = "Create route:";
         internal const string AskForStartPoint = "Please, enter start city:";
         internal const string AskForDestinaion = "Please, enter destination";
@@ -58,8 +57,8 @@ Exit app (exits the application);";
         internal const string RouteCreated = "Route created successfully!";
 
         // Create trip
-
-        internal const string CreateTrip = "Create trip for a route:";
+        internal const string CreateTrip = "Create next 3 trips for a route, starting from next week:";
+        internal const string TripCreated = "Trips created successfully!";
 
         // Create report
         internal const string CreateReport = "Create report:";
@@ -68,7 +67,6 @@ Exit app (exits the application);";
         internal const string AskForTripId = "Please, enter Trip Id";
         internal const string SearchedTripDoesNotExist = "There is no trip with this id!";
         internal const string ReportCreate = "Report created successfully";
-
 
         // User validations
         internal const string SuccessfullyCreatedUser = " successfully created!";
@@ -90,6 +88,7 @@ Exit app (exits the application);";
         // Create reservation
         internal const string CreateReservation = "Create reservation:";
         internal const string FoundUser = "User found!";
+        internal const string ReservationCreated = "Reservation created successfully!";
 
         internal const string AllReservations = "All reservations:";
         //internal const string 
