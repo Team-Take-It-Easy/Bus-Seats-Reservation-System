@@ -57,6 +57,9 @@ Exit app (exits the application);";
         internal const string AskForHour = "Please, enter hour in format HH:MM";
         internal const string RouteCreated = "Route created successfully!";
 
+        // Create trip
+
+        internal const string CreateTrip = "Create trip for a route:";
 
         // User validations
         internal const string SuccessfullyCreatedUser = " successfully created!";
