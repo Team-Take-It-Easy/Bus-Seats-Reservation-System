@@ -27,8 +27,7 @@ namespace BusSeatsReservation.Commands.TripCommands
 
         public void Execute()
         {
-            throw new NotImplementedException();
-            //this.Writer.Write($"{Constants.CreateTrip}");
+            this.Writer.Write($"{Constants.CreateTrip}");
         }
     }
 }

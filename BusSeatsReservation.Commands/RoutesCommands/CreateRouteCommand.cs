@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace BusSeatsReservation.Commands.RoutesCommands
 {
-    public class CreateTripCommand : ICommand
+    public class CreateRouteCommand : ICommand
     {
-        public CreateTripCommand(EfUnitOfWork unitOfWork, IValidator validator, IWriter writer, IReader reader)
+        public CreateRouteCommand(EfUnitOfWork unitOfWork, IValidator validator, IWriter writer, IReader reader)
         {
             this.UnitOfWork = unitOfWork;
             this.Validator = validator;
