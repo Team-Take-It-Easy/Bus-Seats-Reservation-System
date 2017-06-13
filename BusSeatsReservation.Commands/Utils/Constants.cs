@@ -4,7 +4,7 @@
     {
         // Constant arrays
         internal static readonly string[] CommandsList = { "Create", "Update", "Delete", "All", "Exit" };
-        internal static readonly string[] ModelsList = { "User", "Reservation", "Route", "Trip", "App" };
+        internal static readonly string[] ModelsList = { "User", "Reservation", "Route", "Trip", "App", "Report" };
 
         // UI strings
         internal const string AskForCommandShort = "Please, enter command";
@@ -60,6 +60,15 @@ Exit app (exits the application);";
         // Create trip
 
         internal const string CreateTrip = "Create trip for a route:";
+
+        // Create report
+        internal const string CreateReport = "Create report:";
+        internal const string AskForReportType = "Please, enter type of report - users or trip";
+        internal const string InvalidReportType = "There is no report with this type!";
+        internal const string AskForTripId = "Please, enter Trip Id";
+        internal const string SearchedTripDoesNotExist = "There is no trip with this id!";
+        internal const string ReportCreate = "Report created successfully";
+
 
         // User validations
         internal const string SuccessfullyCreatedUser = " successfully created!";

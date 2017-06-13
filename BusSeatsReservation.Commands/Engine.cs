@@ -8,6 +8,7 @@
     using Utils;
     using Data.Common.UnitsOfWork;
     using System;
+    using Models.PostgreSQL.Models;
 
     public class Engine
     {
@@ -103,7 +104,17 @@
                         .FindCommand(commandString, model, this.SQLUnitOfWork,
                                         this.Validator, this.Writer, this.Reader);
 
-                command.Execute();
+                try
+                {
+                    command.Execute();
+                }
+
+                catch (Exception ex)
+                {
+                    this.Writer.Write("Unsuccessful command execution, please try again");
+                    this.Writer.Write(ex.Message);
+                    continue;
+                }
             }
         }
 

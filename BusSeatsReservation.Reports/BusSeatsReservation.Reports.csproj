@@ -52,6 +52,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusSeatsReservation.Data.Common\BusSeatsReservation.Data.Common.csproj">
+      <Project>{76ba3948-b661-43a1-bfe4-9c1c700a1c58}</Project>
+      <Name>BusSeatsReservation.Data.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusSeatsReservation.Data.PostgreSQL\BusSeatsReservation.Data.PostgreSQL.csproj">
+      <Project>{869e5624-bbaf-435d-9834-524ee4397ed3}</Project>
+      <Name>BusSeatsReservation.Data.PostgreSQL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BusSeatsReservation.Models\BusSeatsReservation.Models.csproj">
       <Project>{28061cf9-df66-4c09-b320-620ab85d272c}</Project>
       <Name>BusSeatsReservation.Models</Name>

@@ -53,6 +53,7 @@
     <Compile Include="Contracts\IWriter.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="Factories\CommandsFactory.cs" />
+    <Compile Include="PdfReportsCommands\CreateReportCommand.cs" />
     <Compile Include="Readers\ConsoleReader.cs" />
     <Compile Include="ReservationsCommands\AllReservationCommand.cs" />
     <Compile Include="ReservationsCommands\CreateReservationCommand.cs" />
@@ -77,9 +78,25 @@
       <Project>{76BA3948-B661-43A1-BFE4-9C1C700A1C58}</Project>
       <Name>BusSeatsReservation.Data.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BusSeatsReservation.Data.PostgreSQL\BusSeatsReservation.Data.PostgreSQL.csproj">
+      <Project>{869e5624-bbaf-435d-9834-524ee4397ed3}</Project>
+      <Name>BusSeatsReservation.Data.PostgreSQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusSeatsReservation.Data.SQLite\BusSeatsReservation.Data.SQLite.csproj">
+      <Project>{6b33cc85-d5c5-4e6b-8bf7-afcd4a431bdd}</Project>
+      <Name>BusSeatsReservation.Data.SQLite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusSeatsReservation.Data\BusSeatsReservation.Data.csproj">
+      <Project>{9267312a-73a1-4817-a6c8-a9145eb66feb}</Project>
+      <Name>BusSeatsReservation.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BusSeatsReservation.Models\BusSeatsReservation.Models.csproj">
       <Project>{28061CF9-DF66-4C09-B320-620AB85D272C}</Project>
       <Name>BusSeatsReservation.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusSeatsReservation.Reports\BusSeatsReservation.Reports.csproj">
+      <Project>{65dbfabb-eab3-468c-b109-406435b82749}</Project>
+      <Name>BusSeatsReservation.Reports</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
