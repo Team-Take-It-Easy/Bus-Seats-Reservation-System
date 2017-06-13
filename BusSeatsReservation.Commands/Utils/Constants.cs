@@ -48,6 +48,16 @@ Exit app (exits the application);";
 
         internal const string AllUsers = "All users:";
 
+        // Create route
+
+        internal const string CreateRoute = "Create route:";
+        internal const string AskForStartPoint = "Please, enter start city:";
+        internal const string AskForDestinaion = "Please, enter destination";
+        internal const string AskForWeekDay = "Please, enter day of the week with number from 1 to 7";
+        internal const string AskForHour = "Please, enter hour in format HH:MM";
+        internal const string RouteCreated = "Route created successfully!";
+
+
         // User validations
         internal const string SuccessfullyCreatedUser = " successfully created!";
         internal const string SuccessfullyCreateReservation = "Reservation successfully created";
@@ -87,6 +97,7 @@ Exit app (exits the application);";
         // Route validation
         internal const string ErrorEmptyFromDestination = "Error! Please enter route starting position!";
         internal const string ErrorEmptyToDestination = "Error! Please enter route destination!";
+        internal const string ErrorNotValidHour = "Error! Please enter valid hour!";
 
         // Seat validation
         internal const string ErrorNoSeatLabel = "Error! Please enter seat label!";

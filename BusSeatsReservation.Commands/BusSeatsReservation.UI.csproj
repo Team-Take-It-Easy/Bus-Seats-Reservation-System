@@ -55,6 +55,7 @@
     <Compile Include="Readers\ConsoleReader.cs" />
     <Compile Include="ReservationsCommands\AllReservationCommand.cs" />
     <Compile Include="ReservationsCommands\CreateReservationCommand.cs" />
+    <Compile Include="RoutesCommands\CreateRouteCommand.cs" />
     <Compile Include="UsersCommands\AllUserCommand.cs" />
     <Compile Include="Utils\CommandParser.cs" />
     <Compile Include="Utils\DataParser.cs" />
@@ -67,9 +68,7 @@
     <Compile Include="UsersCommands\UpdateUserCommand.cs" />
     <Compile Include="Utils\Constants.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="RoutesCommands\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BusSeatsReservation.Data.Common\BusSeatsReservation.Data.Common.csproj">
       <Project>{76BA3948-B661-43A1-BFE4-9C1C700A1C58}</Project>

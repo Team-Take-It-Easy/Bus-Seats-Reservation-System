@@ -34,7 +34,8 @@
             }
             catch
             {
-                this.Writer.Write($"{Constants.SearchedUserDoesNotExist}\n{Constants.AskToCreateUser}\n{Constants.AskForCommandShort}");
+                //this.Writer.Write($"{Constants.SearchedUserDoesNotExist}\n{Constants.AskToCreateUser}\n{Constants.AskForCommandShort}");
+                this.Writer.Write($"{Constants.SearchedUserDoesNotExist}\n{Constants.AskForCommandShort}");
                 return;    
             }
 
